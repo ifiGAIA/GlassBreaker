@@ -5,8 +5,8 @@ using UnityEngine;
 public class GlassManager : MonoBehaviour
 {
     MeshRenderer meshRenderer;
-    BoxCollider boxCollider;
     public GameObject knock_Position;
+    public GameObject[] Objects;
     public GameObject Prefab;
     public GameObject glassPos;
     public GameObject explosionGlass;
@@ -19,7 +19,6 @@ public class GlassManager : MonoBehaviour
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
-        boxCollider = GetComponent<BoxCollider>();
         glassMove = GameObject.Find("Glass").GetComponent<GlassMove>();
         explosionGlass.SetActive(false);
         glassPos = GameObject.Find("glassPos");
@@ -45,7 +44,6 @@ public class GlassManager : MonoBehaviour
         {
             glassMove.glassisbroken = true;
             meshRenderer.enabled = false;
-            boxCollider.enabled = false;
             explosionGlass.SetActive(true);
             canMove = false;
             Invoke("DestroyGlass",10f);
@@ -66,10 +64,11 @@ public class GlassManager : MonoBehaviour
     }
     void KnockSpot()
     {
+        int Random_Objects = Random.Range(0, Objects.Length);
         if(spotisexist == false && knockcount<5 && canKnock == true)
         {
             Vector3 rnadomPos = new Vector3(Random.Range(-0.73f,0.73f),Random.Range(0.5f,1.8f),knock_Position.transform.position.z);
-            Instantiate(Prefab, rnadomPos,knock_Position.transform.rotation);
+            Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
             spotisexist =true;
         }
     }

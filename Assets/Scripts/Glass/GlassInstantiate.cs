@@ -7,6 +7,7 @@ public class GlassInstantiate : MonoBehaviour
     public Transform InitPos;
     public GameObject Prefab;
     private GameObject glass;
+    public int glasscount;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class GlassInstantiate : MonoBehaviour
     }
     void Glassinstantiate()
     {
-        for(int i=0; i<5; i++)
+        for(int i=0; i<glasscount; i++)
         {
             Vector3 glassPos = new Vector3(InitPos.position.x, InitPos.position.y, InitPos.position.z+(float)i);
             glass = Instantiate(Prefab, glassPos,InitPos.rotation);//生成

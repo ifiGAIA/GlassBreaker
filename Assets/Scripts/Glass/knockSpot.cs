@@ -20,15 +20,31 @@ public class knockSpot : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "hammer")
+        if(other.gameObject.tag == "hammer" && gameObject.tag == "red")
         {
             Glass.spotisexist=false;
             Glass.KnockCount();
             Destroy(gameObject);
+            Debug.Log("紅色");
+        }
+        else if(other.gameObject.tag == "hammer" && gameObject.tag == "green")
+        {
+            Glass.spotisexist=false;
+            Glass.KnockCount();
+            Destroy(gameObject);
+            Debug.Log("綠色");
         }
     }
     void OnMouseDown()
     {
+        if(gameObject.tag == "red")
+        {
+            Debug.Log("紅色");
+        }
+        if(gameObject.tag == "green")
+        {
+            Debug.Log("綠色");
+        }
         Glass.spotisexist=false;
         Glass.KnockCount();
         Destroy(gameObject);
