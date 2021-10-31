@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlassManager : MonoBehaviour
 {
+    Scene scene;
     MeshRenderer meshRenderer;
     public GameObject knock_Position;
     public GameObject[] Objects;
@@ -18,6 +20,7 @@ public class GlassManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scene = SceneManager.GetActiveScene();
         meshRenderer = GetComponent<MeshRenderer>();
         glassMove = GameObject.Find("Glass").GetComponent<GlassMove>();
         explosionGlass.SetActive(false);
@@ -27,9 +30,16 @@ public class GlassManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        KnockSpot();
         GlassBroken();
         GlasscanKnock();
+        if(scene.name == ("Game1"))
+        {
+            KnockSpot_game1();
+        }
+        else if(scene.name == ("TestScenes"))
+        {
+            KnockSpot_game2();
+        }
     }
     void GlasscanKnock()
     {
@@ -62,9 +72,21 @@ public class GlassManager : MonoBehaviour
             gameObject.tag = "Untagged";
         }
     }
-    void KnockSpot()
+    void KnockSpot_game1()
+    {
+        int Random_Objects = Random.Range(0, 0);
+
+        if(spotisexist == false && knockcount<5 && canKnock == true)
+        {
+            Vector3 rnadomPos = new Vector3(Random.Range(-0.73f,0.73f),Random.Range(0.5f,1.8f),knock_Position.transform.position.z);
+            Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+            spotisexist =true;
+        }
+    }
+    void KnockSpot_game2()
     {
         int Random_Objects = Random.Range(0, Objects.Length);
+
         if(spotisexist == false && knockcount<5 && canKnock == true)
         {
             Vector3 rnadomPos = new Vector3(Random.Range(-0.73f,0.73f),Random.Range(0.5f,1.8f),knock_Position.transform.position.z);
