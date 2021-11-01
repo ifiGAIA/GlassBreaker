@@ -131,6 +131,7 @@ MonoBehaviour:
   Objects:
   - {fileID: 1492543208851373025, guid: cc8f14d75678063469fdb407c4c79131, type: 3}
   - {fileID: 1492543208851373025, guid: ea07de4ff2202d849bf595aeddfc1b09, type: 3}
+  - {fileID: 1492543208851373025, guid: e0b0625c015946343af59dd42e98e3a4, type: 3}
   Prefab: {fileID: 1492543208851373025, guid: cc8f14d75678063469fdb407c4c79131, type: 3}
   glassPos: {fileID: 0}
   explosionGlass: {fileID: 578381678732672016}

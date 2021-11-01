@@ -94,4 +94,15 @@ public class GlassManager : MonoBehaviour
             spotisexist =true;
         }
     }
+    void KnockSpot_game3()
+    {
+        int Random_Objects = Random.Range(0, Objects.Length);
+
+        if(spotisexist == false && knockcount<5 && canKnock == true)
+        {
+            Vector3 rnadomPos = new Vector3(Random.Range(-0.73f,0.73f),Random.Range(0.0f,0.5f),knock_Position.transform.position.z);
+            Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+            spotisexist =true;
+        }
+    }
 }
