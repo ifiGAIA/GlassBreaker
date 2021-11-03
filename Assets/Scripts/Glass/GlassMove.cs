@@ -2,18 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameLevel
+{
+    Game1,
+    Game2,
+    Game3
+}
 public class GlassMove : MonoBehaviour
 {
+    public GameLevel gameLevel;
     public bool moveistrue = false;
     private float PosZ;
     private Vector3 finalPos;
     public bool glassisbroken = false; 
     public float speed = 5f;
+
+    public bool TimesUp;
+    public bool noglass;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameLevel = GameLevel.Game1;
     }
 
     // Update is called once per frame
@@ -29,6 +39,18 @@ public class GlassMove : MonoBehaviour
         if(moveistrue == true)
         {
             Move();
+        }
+        GameLevelSwitch();
+    }
+    void GameLevelSwitch()
+    {
+        if(TimesUp || noglass)//時間到或是玻璃打完
+        {
+            gameLevel = GameLevel.Game2;
+        }
+        else if(TimesUp || noglass)//時間到或是玻璃打完
+        {
+            gameLevel = GameLevel.Game3;
         }
     }
     public void Move()
