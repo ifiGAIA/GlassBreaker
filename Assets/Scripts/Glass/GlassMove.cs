@@ -23,7 +23,7 @@ public class GlassMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameLevel = GameLevel.Game1;
+        // gameLevel = GameLevel.Game1;
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class GlassMove : MonoBehaviour
         {
             Move();
         }
-        GameLevelSwitch();
+        // GameLevelSwitch();
     }
     void GameLevelSwitch()
     {

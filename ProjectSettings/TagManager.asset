@@ -5,9 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - glass
-  - hammer
   - red
   - green
+  - Left_hammer
+  - Right_hammer
+  - purple
   layers:
   - Default
   - TransparentFX

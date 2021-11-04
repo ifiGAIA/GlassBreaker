@@ -108,8 +108,8 @@ GameObject:
   - component: {fileID: 1492543208851373024}
   - component: {fileID: -6250076759044264712}
   m_Layer: 0
-  m_Name: knockspot_Orange
-  m_TagString: red
+  m_Name: knockspot_Purple
+  m_TagString: purple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
