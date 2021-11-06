@@ -144,7 +144,7 @@ MonoBehaviour:
   knockcount: 0
   glassbroken: {fileID: 8300000, guid: c7d89b449b523f94d8fa0989b2823c29, type: 3}
   glassshatter: {fileID: 8300000, guid: f666a4d7c36e4b146b08ae0ad8108d7c, type: 3}
-  glassknock: {fileID: 8300000, guid: 6736bd0eec5cf2749a4312917b7d8e92, type: 3}
+  glassknock: {fileID: 8300000, guid: afd443ff645409142babb0b67d4a73b5, type: 3}
 --- !u!82 &4963847733069180982
 AudioSource:
   m_ObjectHideFlags: 0
@@ -265,7 +265,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578381679806122289}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.556, y: 3.5559998, z: 0.20320025}

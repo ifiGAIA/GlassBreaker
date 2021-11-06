@@ -49,6 +49,13 @@ public class GlassManager : MonoBehaviour
             audioSource.PlayOneShot(glassknock);
         }
     }
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Left_hammer" || other.gameObject.tag == "Right_hammer")
+        {
+            audioSource.PlayOneShot(glassknock);
+        }
+    }
     void GameLevelSwitch()
     {
         if(glassMove.gameLevel == GameLevel.Game1)
