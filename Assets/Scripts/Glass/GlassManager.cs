@@ -6,6 +6,7 @@ public class GlassManager : MonoBehaviour
 {
     Scene scene;
     MeshRenderer meshRenderer;
+    BoxCollider boxCollider;
     public GameObject knock_Position;
     public GameObject[] Objects;
     public GameObject Prefab;
@@ -16,14 +17,22 @@ public class GlassManager : MonoBehaviour
     public bool spotisexist = false;
     public bool canMove = false;
     public int knockcount = 0;
+
+    public AudioClip glassbroken;
+    public AudioClip glassshatter;
+    public AudioClip glassknock;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         scene = SceneManager.GetActiveScene();
         meshRenderer = GetComponent<MeshRenderer>();
+        boxCollider = GetComponent<BoxCollider>();
         glassMove = GameObject.Find("Glass").GetComponent<GlassMove>();
         explosionGlass.SetActive(false);
         glassPos = GameObject.Find("glassPos");
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,6 +41,13 @@ public class GlassManager : MonoBehaviour
         GlassBroken();
         GlasscanKnock();
         GameLevelSwitch();
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Left_hammer" || other.gameObject.tag == "Right_hammer")
+        {
+            audioSource.PlayOneShot(glassknock);
+        }
     }
     void GameLevelSwitch()
     {
@@ -63,7 +79,9 @@ public class GlassManager : MonoBehaviour
         if(canMove == true)
         {
             glassMove.glassisbroken = true;
+            audioSource.PlayOneShot(glassshatter);
             meshRenderer.enabled = false;
+            boxCollider.enabled = false;
             explosionGlass.SetActive(true);
             canMove = false;
             Invoke("DestroyGlass",10f);
@@ -76,6 +94,7 @@ public class GlassManager : MonoBehaviour
     public void KnockCount()
     {
         knockcount += 1;
+        audioSource.PlayOneShot(glassbroken);
         if(knockcount == 5)
         {
             canMove = true;

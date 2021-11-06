@@ -18,6 +18,10 @@ public class knockSpot : MonoBehaviour
     {
         
     }
+    void DestroyGlass()
+    {
+        Destroy(gameObject);
+    }
     void OnTriggerEnter(Collider other)
     {
         if(glassMove.gameLevel == GameLevel.Game1)
@@ -27,6 +31,7 @@ public class knockSpot : MonoBehaviour
                 Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
+                // Invoke("DestroyGlass",1f);
                 Debug.Log("紅色");
             }
         }
