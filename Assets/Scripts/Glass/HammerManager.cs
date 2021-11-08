@@ -7,16 +7,18 @@ using Valve.VR.InteractionSystem;
 public class HammerManager : MonoBehaviour
 {
     private Interactable interactable;
+    public GameObject sign;
     // Start is called before the first frame update
     void Start()
     {
         interactable = GetComponent<Interactable>();
+        sign.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Openlight();
     }
     private void OnHandHoverBegin(Hand hand)
     {
@@ -27,6 +29,17 @@ public class HammerManager : MonoBehaviour
     {
         hand.HideGrabHint();
         Debug.Log("5");
+    }
+    void Openlight()
+    {
+        if(interactable.attachedToHand != null)
+        {
+            sign.SetActive(true);
+        }
+        else
+        {
+            sign.SetActive(false);
+        }
     }
     private void HandHoverUpdate(Hand hand)
     {

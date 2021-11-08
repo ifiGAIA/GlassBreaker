@@ -10,6 +10,8 @@ TagManager:
   - Left_hammer
   - Right_hammer
   - purple
+  - hammer
+  - glasscrack
   layers:
   - Default
   - TransparentFX

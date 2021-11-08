@@ -5,12 +5,16 @@ using UnityEngine;
 public class knockSpot : MonoBehaviour
 {
     GlassManager Glass;
+    Transform Glasscrack;
     GlassMove glassMove;
+    public GameObject Prefab;
+    private GameObject crack;
     // Start is called before the first frame update
     void Start()
     {
         Glass = GameObject.FindWithTag("glass").gameObject.GetComponent<GlassManager>();
         glassMove = GameObject.Find("Glass").GetComponent<GlassMove>();
+        Glasscrack = GameObject.FindWithTag("glasscrack").gameObject.transform;
     }
 
     // Update is called once per frame
@@ -28,10 +32,12 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" || other.gameObject.tag == "Right_hammer")
             {
+                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack.transform.parent = Glasscrack;
+
                 Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
-                // Invoke("DestroyGlass",1f);
                 Debug.Log("紅色");
             }
         }
@@ -39,6 +45,9 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
+                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack.transform.parent = Glasscrack;
+
                 Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
@@ -46,6 +55,9 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
+                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack.transform.parent = Glasscrack;
+
                 Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
@@ -56,6 +68,9 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
+                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack.transform.parent = Glasscrack;
+
                 Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
@@ -63,6 +78,9 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
+                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack.transform.parent = Glasscrack;
+
                 Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
@@ -70,6 +88,9 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
             {
+                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack.transform.parent = Glasscrack;
+                
                 Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
@@ -87,6 +108,8 @@ public class knockSpot : MonoBehaviour
         {
             Debug.Log("綠色");
         }
+        crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+        crack.transform.parent = Glasscrack;
         Glass.spotisexist=false;
         Glass.KnockCount();
         Destroy(gameObject);

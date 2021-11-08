@@ -10,6 +10,7 @@ public class GlassManager : MonoBehaviour
     public GameObject knock_Position;
     public GameObject[] Objects;
     public GameObject Prefab;
+    public GameObject crack;
     public GameObject glassPos;
     public GameObject explosionGlass;
     GlassMove glassMove;
@@ -106,6 +107,8 @@ public class GlassManager : MonoBehaviour
         {
             canMove = true;
             gameObject.tag = "Untagged";
+            crack.gameObject.tag = "Untagged";
+            crack.SetActive(false);
         }
     }
     void KnockSpot_game1()
@@ -114,7 +117,7 @@ public class GlassManager : MonoBehaviour
 
         if(spotisexist == false && knockcount<5 && canKnock == true)
         {
-            Vector3 rnadomPos = new Vector3(Random.Range(-0.73f,0.73f),Random.Range(0.5f,1.8f),knock_Position.transform.position.z);
+            Vector3 rnadomPos = new Vector3(Random.Range(-0.6f,0.6f),Random.Range(0.8f,1.8f),knock_Position.transform.position.z);
             Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
             spotisexist =true;
         }
@@ -125,7 +128,7 @@ public class GlassManager : MonoBehaviour
 
         if(spotisexist == false && knockcount<5 && canKnock == true)
         {
-            Vector3 rnadomPos = new Vector3(Random.Range(-0.73f,0.73f),Random.Range(0.5f,1.8f),knock_Position.transform.position.z);
+            Vector3 rnadomPos = new Vector3(Random.Range(-0.6f,0.6f),Random.Range(0.8f,1.8f),knock_Position.transform.position.z);
             Debug.Log(Random_Objects);
             Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
             spotisexist =true;
@@ -139,13 +142,13 @@ public class GlassManager : MonoBehaviour
         {
             if(Random_Objects == 0 || Random_Objects == 1)
             {
-                Vector3 rnadomPos = new Vector3(Random.Range(-0.73f,0.73f),Random.Range(0.5f,1.8f),knock_Position.transform.position.z);
+                Vector3 rnadomPos = new Vector3(Random.Range(-0.6f,0.6f),Random.Range(0.8f,1.8f),knock_Position.transform.position.z);
                 Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
                 spotisexist =true;
             }
             else if(Random_Objects == 2)
             {
-                Vector3 rnadomPos = new Vector3(Random.Range(-0.73f,0.73f),Random.Range(0.2f,0.4f),knock_Position.transform.position.z);
+                Vector3 rnadomPos = new Vector3(Random.Range(-0.6f,0.6f),Random.Range(0.2f,0.4f),knock_Position.transform.position.z);
                 Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
                 spotisexist =true;
             }
