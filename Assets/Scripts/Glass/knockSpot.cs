@@ -9,6 +9,7 @@ public class knockSpot : MonoBehaviour
     GlassMove glassMove;
     public GameObject Prefab;
     private GameObject crack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" || other.gameObject.tag == "Right_hammer")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -45,7 +46,7 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -55,7 +56,7 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -68,7 +69,7 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -78,7 +79,7 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -88,7 +89,7 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
                 
                 Glass.spotisexist=false;
