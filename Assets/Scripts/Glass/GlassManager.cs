@@ -8,7 +8,7 @@ public class GlassManager : MonoBehaviour
     MeshRenderer meshRenderer;
     BoxCollider boxCollider;
 
-    public GameObject GlassknockPos;
+    public Transform[] KnockSpots;
 
     public GameObject knock_Position;
     public GameObject[] Objects;
@@ -64,7 +64,8 @@ public class GlassManager : MonoBehaviour
     {
         if(glassMove.gameLevel == GameLevel.Game1)
         {
-            KnockSpot_game1();
+            // KnockSpot_game1();
+            KnockSpot();
             // Debug.Log("第一關");
         }
         else if(glassMove.gameLevel == GameLevel.Game2)
@@ -124,6 +125,36 @@ public class GlassManager : MonoBehaviour
             Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
             spotisexist =true;
             Debug.Log(rnadomPos);
+        }
+    }
+    void KnockSpot()
+    {
+        // int Random_Objects = Random.Range(0, 2);
+        if(spotisexist == false && canKnock == true && gameObject.name == "glass1")
+        {
+            for(int i=0; i<5; i++)
+            {
+                int Random_Objects = Random.Range(0, 2);
+                Instantiate(Objects[Random_Objects], KnockSpots[0].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                if(i==4)
+                {
+                    spotisexist= true;
+                }
+                Debug.Log(KnockSpots[0].GetChild(i).gameObject.transform.position);
+            }
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass2")
+        {
+            for(int i=0; i<5; i++)
+            {
+                int Random_Objects = Random.Range(0, 2);
+                Instantiate(Objects[Random_Objects], KnockSpots[1].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                if(i==4)
+                {
+                    spotisexist= true;
+                }
+                Debug.Log(KnockSpots[0].GetChild(i).gameObject.transform.position);
+            }
         }
     }
     void KnockSpot_game2()

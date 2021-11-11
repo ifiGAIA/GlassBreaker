@@ -130,8 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4bb6d906a85bb4686443f6078f60cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlassknockPos:
-  - {fileID: 0}
+  KnockSpots:
+  - {fileID: 1710724944457801239, guid: 3e3a349aacd39814ab205c68455822fb, type: 3}
+  - {fileID: 1428158120407525410, guid: 7b577fb384d81e1418542b249c1b8566, type: 3}
   knock_Position: {fileID: 344449243920448949}
   Objects:
   - {fileID: 1492543208851373025, guid: cc8f14d75678063469fdb407c4c79131, type: 3}

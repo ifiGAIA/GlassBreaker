@@ -105,7 +105,7 @@ public class knockSpot : MonoBehaviour
         int Random_Objects = Random.Range(0, Objects.Length);
         crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(0f,0.0f,0.0f));
         crack.transform.parent = Glasscrack;
-        Glass.spotisexist=false;
+        // Glass.spotisexist=false;
         Glass.KnockCount();
         Destroy(gameObject);
     }
