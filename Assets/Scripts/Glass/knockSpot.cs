@@ -7,8 +7,8 @@ public class knockSpot : MonoBehaviour
     GlassManager Glass;
     Transform Glasscrack;
     GlassMove glassMove;
-    public GameObject Prefab;
     private GameObject crack;
+    public GameObject[] Objects;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +29,12 @@ public class knockSpot : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        int Random_Objects = Random.Range(0, Objects.Length);
         if(glassMove.gameLevel == GameLevel.Game1)
         {
             if(other.gameObject.tag == "Left_hammer" || other.gameObject.tag == "Right_hammer")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -46,7 +47,7 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -56,7 +57,7 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -69,7 +70,7 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -79,7 +80,7 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 Glass.spotisexist=false;
@@ -89,7 +90,7 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
             {
-                crack = Instantiate(Prefab, gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
                 
                 Glass.spotisexist=false;
@@ -101,15 +102,8 @@ public class knockSpot : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if(gameObject.tag == "red")
-        {
-            Debug.Log("紅色");
-        }
-        if(gameObject.tag == "green")
-        {
-            Debug.Log("綠色");
-        }
-        crack = Instantiate(Prefab, gameObject.transform.position,gameObject.transform.rotation);
+        int Random_Objects = Random.Range(0, Objects.Length);
+        crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(0f,0.0f,0.0f));
         crack.transform.parent = Glasscrack;
         Glass.spotisexist=false;
         Glass.KnockCount();

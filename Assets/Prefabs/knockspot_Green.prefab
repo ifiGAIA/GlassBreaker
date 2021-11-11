@@ -205,6 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 881846668636596876, guid: 24d7f42c918a4a1418824e63991b77df, type: 3}
+  Objects:
+  - {fileID: 2761700253177851966, guid: 24d7f42c918a4a1418824e63991b77df, type: 3}
+  - {fileID: 2761700253177851966, guid: 73241abbb77d4e84c84e86f08612d0bb, type: 3}
+  - {fileID: 2761700253177851966, guid: 4871fe79c1a33234caae521724d529a3, type: 3}
 --- !u!54 &-3397656378546080278
 Rigidbody:
   m_ObjectHideFlags: 0
