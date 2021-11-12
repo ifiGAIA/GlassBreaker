@@ -5,6 +5,7 @@ using UnityEngine;
 public class knockSpot : MonoBehaviour
 {
     GlassManager Glass;
+    KnockSpotManager knockSpotManager;
     Transform Glasscrack;
     GlassMove glassMove;
     private GameObject crack;
@@ -14,6 +15,8 @@ public class knockSpot : MonoBehaviour
     void Start()
     {
         Glass = GameObject.FindWithTag("glass").gameObject.GetComponent<GlassManager>();
+        knockSpotManager = GameObject.FindWithTag("KnockSpotManager").gameObject.GetComponent<KnockSpotManager>();
+
         glassMove = GameObject.Find("Glass").GetComponent<GlassMove>();
         Glasscrack = GameObject.FindWithTag("glasscrack").gameObject.transform;
     }
@@ -38,9 +41,13 @@ public class knockSpot : MonoBehaviour
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-                Destroy(gameObject);
-                Debug.Log("紅色");
+
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
+                // Debug.Log("紅色");
             }
         }
         else if(glassMove.gameLevel == GameLevel.Game2)
@@ -53,7 +60,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
-                Debug.Log("紅色");
+                // Debug.Log("紅色");
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
@@ -63,7 +70,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
-                Debug.Log("綠色");
+                // Debug.Log("綠色");
             }
         }
         else if(glassMove.gameLevel == GameLevel.Game3)
@@ -76,7 +83,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
-                Debug.Log("紅色");
+                // Debug.Log("紅色");
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
@@ -86,7 +93,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
-                Debug.Log("綠色");
+                // Debug.Log("綠色");
             }
             else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
             {
@@ -96,7 +103,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 Glass.KnockCount();
                 Destroy(gameObject);
-                Debug.Log("紫色");
+                // Debug.Log("紫色");
             }
         }
     }
@@ -106,7 +113,10 @@ public class knockSpot : MonoBehaviour
         crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(0f,0.0f,0.0f));
         crack.transform.parent = Glasscrack;
         // Glass.spotisexist=false;
+        knockSpotManager.KnockSpot();
         Glass.KnockCount();
-        Destroy(gameObject);
+        // Destroy(gameObject);
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        gameObject.GetComponentInChildren<Light>().enabled = false;
     }
 }

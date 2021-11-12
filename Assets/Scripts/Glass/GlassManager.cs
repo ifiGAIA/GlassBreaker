@@ -71,18 +71,18 @@ public class GlassManager : MonoBehaviour
         {
             // KnockSpot_game1();
             KnockSpot_Game1();
-            Debug.Log("第一關");
+            // Debug.Log("第一關");
         }
         else if(glassMove.gameLevel == GameLevel.Game2)
         {
             // KnockSpot_game2();
             KnockSpot_Game2();
-            Debug.Log("第二關");
+            // Debug.Log("第二關");
         }
         else if(glassMove.gameLevel == GameLevel.Game3)
         {
             KnockSpot_game3();
-            Debug.Log("第三關");
+            // Debug.Log("第三關");
         }
     }
     void GlasscanKnock()
@@ -130,11 +130,13 @@ public class GlassManager : MonoBehaviour
             {
                 int Random_Objects = Random.Range(0, 0);
                 KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[0].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                // Instantiate(Objects[Random_Objects], KnockSpots[0].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;
                 }
                 KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+                KnockSpotsManager.name = "knockSpot" + (i+1).ToString();
             }
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass2")
@@ -155,11 +157,12 @@ public class GlassManager : MonoBehaviour
             for(int i=0; i<5; i++)
             {
                 int Random_Objects = Random.Range(0, 0);
-                Instantiate(Objects[Random_Objects], KnockSpots[2].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[2].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;
                 }
+                KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             }
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass4")
@@ -167,11 +170,12 @@ public class GlassManager : MonoBehaviour
             for(int i=0; i<5; i++)
             {
                 int Random_Objects = Random.Range(0, 0);
-                Instantiate(Objects[Random_Objects], KnockSpots[3].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[3].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;
                 }
+                KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             }
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass5")
@@ -179,11 +183,12 @@ public class GlassManager : MonoBehaviour
             for(int i=0; i<5; i++)
             {
                 int Random_Objects = Random.Range(0, 0);
-                Instantiate(Objects[Random_Objects], KnockSpots[4].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[4].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;
                 }
+                KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             }
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass6")
@@ -191,11 +196,12 @@ public class GlassManager : MonoBehaviour
             for(int i=0; i<5; i++)
             {
                 int Random_Objects = Random.Range(0, 0);
-                Instantiate(Objects[Random_Objects], KnockSpots[5].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[5].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;
                 }
+                KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             }
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass7")
@@ -203,11 +209,12 @@ public class GlassManager : MonoBehaviour
             for(int i=0; i<5; i++)
             {
                 int Random_Objects = Random.Range(0, 0);
-                Instantiate(Objects[Random_Objects], KnockSpots[6].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[6].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;
                 }
+                KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             }
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass8")
@@ -215,11 +222,12 @@ public class GlassManager : MonoBehaviour
             for(int i=0; i<5; i++)
             {
                 int Random_Objects = Random.Range(0, 0);
-                Instantiate(Objects[Random_Objects], KnockSpots[7].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[7].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;
                 }
+                KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             }
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass9")
@@ -227,11 +235,12 @@ public class GlassManager : MonoBehaviour
             for(int i=0; i<5; i++)
             {
                 int Random_Objects = Random.Range(0, 0);
-                Instantiate(Objects[Random_Objects], KnockSpots[8].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[8].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;
                 }
+                KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             }
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass10")
@@ -239,11 +248,12 @@ public class GlassManager : MonoBehaviour
             for(int i=0; i<5; i++)
             {
                 int Random_Objects = Random.Range(0, 0);
-                Instantiate(Objects[Random_Objects], KnockSpots[9].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
+                KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[9].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;
                 }
+                KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
                 Debug.Log(KnockSpots[9].GetChild(i).gameObject.transform.position);
             }
         }

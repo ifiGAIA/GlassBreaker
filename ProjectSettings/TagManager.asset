@@ -12,6 +12,7 @@ TagManager:
   - purple
   - hammer
   - glasscrack
+  - KnockSpotManager
   layers:
   - Default
   - TransparentFX

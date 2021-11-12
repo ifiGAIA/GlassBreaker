@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 196422469}
   m_Layer: 0
   m_Name: KnockSpotscollect
-  m_TagString: Untagged
+  m_TagString: KnockSpotManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -580,6 +580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Knock: {fileID: 196422470}
   start: 0
+  knocking: 0
   spot1: 0
   spot2: 0
   spot3: 0
