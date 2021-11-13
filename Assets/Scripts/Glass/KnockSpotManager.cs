@@ -70,7 +70,6 @@ public class KnockSpotManager : MonoBehaviour
     }
     public void KnockSpot()
     {
-        Debug.Log("666");
         if(spot1 == true)
         {
             spot2 = true;

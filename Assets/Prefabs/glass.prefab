@@ -141,12 +141,23 @@ MonoBehaviour:
   - {fileID: 4221360012695499730, guid: 4b5e7bdf30044b343966de91e4743942, type: 3}
   - {fileID: 8070649051172799769, guid: b1894fcf640b00b49b81925e4aec3e14, type: 3}
   - {fileID: 386250197426027685, guid: 72ad3b9bf0510304a9c47bd3bfbdf070, type: 3}
+  KnockSpots_G3:
+  - {fileID: 2628582487984779196, guid: 6b538cad8494a3f48842068d293eb1a6, type: 3}
+  - {fileID: 2201762784539602675, guid: 8356bd8eeced2014393d9e344cb46619, type: 3}
+  - {fileID: 5880507283706189396, guid: 5d4355e64b3f64d4ebbf99cd0425800b, type: 3}
+  - {fileID: 4684992668625250956, guid: f7e51df75741fe74da56bbbeb49a3ac1, type: 3}
+  - {fileID: 2611719994517558737, guid: e7429cbea525c4c40af4e76aa2172901, type: 3}
+  - {fileID: 7439988773501009120, guid: c3080007c4ed1644c8423182d22d51de, type: 3}
+  - {fileID: 9153022043251744440, guid: be46be32f34984b49ae8e370335a6bb1, type: 3}
+  - {fileID: 4221360012695499730, guid: a9c2d9645cb711f4d8d4fa32c89aaa68, type: 3}
+  - {fileID: 8070649051172799769, guid: 567809bb774c8d14f85450a29f60ad88, type: 3}
+  - {fileID: 386250197426027685, guid: 7ce6b670ff3ff564ba7fb603f892b727, type: 3}
+  KnockSpotscollect: {fileID: 0}
   knock_Position: {fileID: 344449243920448949}
   Objects:
   - {fileID: 1492543208851373025, guid: cc8f14d75678063469fdb407c4c79131, type: 3}
   - {fileID: 1492543208851373025, guid: ea07de4ff2202d849bf595aeddfc1b09, type: 3}
   - {fileID: 1492543208851373025, guid: e0b0625c015946343af59dd42e98e3a4, type: 3}
-  Prefab: {fileID: 1492543208851373025, guid: cc8f14d75678063469fdb407c4c79131, type: 3}
   crack: {fileID: 2894979402567429878}
   glassPos: {fileID: 0}
   explosionGlass: {fileID: 578381678732672016}
