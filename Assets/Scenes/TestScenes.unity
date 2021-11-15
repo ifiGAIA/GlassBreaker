@@ -4539,7 +4539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a11fefc429b324c80c3a8d0ff8a5d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLevel: 0
+  gameLevel: 1
   moveistrue: 0
   glassisbroken: 0
   speed: 1
@@ -5047,7 +5047,7 @@ GameObject:
   - component: {fileID: 1414016490}
   m_Layer: 0
   m_Name: boots
-  m_TagString: Untagged
+  m_TagString: foot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

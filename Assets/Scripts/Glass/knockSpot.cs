@@ -54,22 +54,30 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
-                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.059f),Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-                Destroy(gameObject);
+
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
                 // Debug.Log("紅色");
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
-                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-                Destroy(gameObject);
+
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
                 // Debug.Log("綠色");
             }
         }
@@ -77,32 +85,44 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
-                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-                Destroy(gameObject);
+
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
                 // Debug.Log("紅色");
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
-                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-                Destroy(gameObject);
+
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
                 // Debug.Log("綠色");
             }
             else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
             {
-                crack = Instantiate(Objects[Random_Objects], gameObject.transform.position,Quaternion.Euler(-90f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
                 
                 // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-                Destroy(gameObject);
+
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
                 // Debug.Log("紫色");
             }
         }

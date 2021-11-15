@@ -13,6 +13,7 @@ TagManager:
   - hammer
   - glasscrack
   - KnockSpotManager
+  - foot
   layers:
   - Default
   - TransparentFX
