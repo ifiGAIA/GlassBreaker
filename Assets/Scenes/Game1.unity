@@ -1420,6 +1420,8 @@ MonoBehaviour:
   speed: 1
   TimesUp: 0
   noglass: 0
+  glasscount: 0
+  gameswitchTime: 0
 --- !u!114 &488243947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1435,6 +1437,7 @@ MonoBehaviour:
   InitPos: {fileID: 323381752}
   Prefab: {fileID: 578381679806122289, guid: 636dfc4cf2047fc4f9a3389f154ca232, type: 3}
   glasscount: 10
+  gamestart: 0
 --- !u!1001 &504354969
 PrefabInstance:
   m_ObjectHideFlags: 0

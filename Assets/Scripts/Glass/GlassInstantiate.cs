@@ -8,16 +8,26 @@ public class GlassInstantiate : MonoBehaviour
     public GameObject Prefab;
     private GameObject glass;
     public int glasscount;
+    public bool gamestart;
     // Start is called before the first frame update
     void Start()
     {
-        Glassinstantiate();
+        // Glassinstantiate();
+        gamestart = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(gamestart)
+        {
+            Glassinstantiate();
+            gamestart = false;
+        }
+    }
+    public void GlassReborn()
+    {
+        gamestart = true;
     }
     void Glassinstantiate()
     {

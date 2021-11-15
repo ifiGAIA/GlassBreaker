@@ -37,7 +37,7 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" || other.gameObject.tag == "Right_hammer")
             {
-                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
@@ -54,7 +54,7 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
-                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
@@ -68,7 +68,7 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
-                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
@@ -85,7 +85,7 @@ public class knockSpot : MonoBehaviour
         {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
             {
-                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
@@ -99,7 +99,7 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
             {
-                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
 
                 // Glass.spotisexist=false;
@@ -113,7 +113,7 @@ public class knockSpot : MonoBehaviour
             }
             else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
             {
-                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,-0.036f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
                 
                 // Glass.spotisexist=false;

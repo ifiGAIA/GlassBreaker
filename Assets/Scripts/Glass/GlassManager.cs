@@ -120,6 +120,7 @@ public class GlassManager : MonoBehaviour
             gameObject.tag = "Untagged";
             crack.gameObject.tag = "Untagged";
             crack.SetActive(false);
+            glassMove.GlassCount();
         }
     }
     void KnockSpot_Game1()
@@ -255,7 +256,6 @@ public class GlassManager : MonoBehaviour
                     spotisexist= true;
                 }
                 KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
-                Debug.Log(KnockSpots[9].GetChild(i).gameObject.transform.position);
             }
         }
     }
@@ -390,7 +390,6 @@ public class GlassManager : MonoBehaviour
                     spotisexist= true;
                 }
                 KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
-                Debug.Log(KnockSpots[9].GetChild(i).gameObject.transform.position);
             }
         }
     }

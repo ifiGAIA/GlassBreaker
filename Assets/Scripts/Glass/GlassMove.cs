@@ -10,6 +10,7 @@ public enum GameLevel
 }
 public class GlassMove : MonoBehaviour
 {
+    GlassInstantiate glassInstantiate;
     public GameLevel gameLevel;
     public bool moveistrue = false;
     private float PosZ;
@@ -19,10 +20,14 @@ public class GlassMove : MonoBehaviour
 
     public bool TimesUp;
     public bool noglass;
+
+    public int glasscount = 0;
+    public float gameswitchTime = 0f;
     
     // Start is called before the first frame update
     void Start()
     {
+        glassInstantiate = GameObject.Find("Glass").GetComponent<GlassInstantiate>();
         // gameLevel = GameLevel.Game1;
     }
 
@@ -40,18 +45,43 @@ public class GlassMove : MonoBehaviour
         {
             Move();
         }
-        // GameLevelSwitch();
+        Glassisnone();
+        GameLevelSwitch();
+    }
+    public void GlassCount()
+    {
+        //多少玻璃被打碎
+        glasscount += 1;
+    }
+    void Glassisnone()
+    {
+        if(glasscount == 10)
+        {
+            noglass = true;
+            glasscount = 0;
+        }
     }
     void GameLevelSwitch()
     {
         if(TimesUp || noglass)//時間到或是玻璃打完
         {
-            gameLevel = GameLevel.Game2;
+            if(gameLevel == GameLevel.Game1)
+            {
+                gameLevel = GameLevel.Game2;
+                Invoke("GlassReborn",gameswitchTime);
+            }
+            else if(gameLevel == GameLevel.Game2)
+            {
+                gameLevel = GameLevel.Game3;
+                Invoke("GlassReborn",gameswitchTime);
+            }
+            TimesUp = false;
+            noglass = false;
         }
-        else if(TimesUp || noglass)//時間到或是玻璃打完
-        {
-            gameLevel = GameLevel.Game3;
-        }
+    }
+    void GlassReborn()
+    {
+        glassInstantiate.GlassReborn();
     }
     public void Move()
     {
