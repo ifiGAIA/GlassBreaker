@@ -50,6 +50,7 @@ public class GlassManager : MonoBehaviour
         GlassBroken();
         GlasscanKnock();
         GameLevelSwitch();
+        TimesUp();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -86,6 +87,18 @@ public class GlassManager : MonoBehaviour
             // Debug.Log("第三關");
         }
     }
+    void TimesUp()
+    {
+        if(glassMove.timesUp == true)
+        {
+            meshRenderer.enabled = false;
+            boxCollider.enabled = false;
+            explosionGlass.SetActive(true);
+            Invoke("DestroyGlass",10f);
+            glassMove.Glassshatter();
+        }
+    }
+
     void GlasscanKnock()
     {
         if(gameObject.transform.position == glassPos.transform.position)

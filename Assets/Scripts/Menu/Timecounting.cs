@@ -30,7 +30,6 @@ public class Timecounting : MonoBehaviour
             timer_f -= Time.deltaTime;
             timer_i = (int)timer_f;
             Second();
-            Debug.Log("1");
         }
         TimeManager();
     }
@@ -48,7 +47,6 @@ public class Timecounting : MonoBehaviour
         {
             GetComponent<Text>().text = "秒數 : 00";
         }
-        Debug.Log("2");
     }
     void TimeManager()
     {
@@ -57,7 +55,6 @@ public class Timecounting : MonoBehaviour
             gamestart = false;
             timer_f = timer_F;
             timer_i = timer_I;
-            Debug.Log("3");
         }
     }
     void turn_time() 
