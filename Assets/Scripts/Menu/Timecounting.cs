@@ -5,41 +5,34 @@ using UnityEngine.UI;
 
 public class Timecounting : MonoBehaviour
 {
-    float timer_f = 60f;
-    int timer_i = 0;
+    float timer_f = 10f;
+    int timer_i = 10;
     int minute = 0;
-    int second = 0;
+    public int second;
+    public bool gamestart;
+    public float timer_F;
+    private int timer_I = 10;
+    // Start is called before the first frame update
+    void Start()
+    {
+        gamestart = false;
+        timer_f = timer_F;
+        timer_i = timer_I;
+    }
     // Update is called once per frame
     void Update()
     {
-        timer_f -= Time.deltaTime;
-        timer_i = (int)timer_f;
+        // timer_f -= Time.deltaTime;
+        // timer_i = (int)timer_f;
         turn_time();
-        Second();
-        //印出時間動作
-        // if (minute < 10) 
-        // {
-            
-        //     if (second < 10)
-        //     {
-        //         GetComponent<Text>().text = "秒數:0" + minute + ":0" + second;
-        //     }
-        //     else 
-        //     {
-        //         GetComponent<Text>().text = "秒數:0" + minute + ":" + second;
-        //     }
-        // }
-        // else 
-        // {
-        //     if (second < 10)
-        //     {
-        //         GetComponent<Text>().text = "秒數:" + minute + ":0" + second;
-        //     }
-        //     else
-        //     {
-        //         GetComponent<Text>().text = "秒數:" + minute + ":" + second;
-        //     }
-        // }
+        if(gamestart)
+        {
+            timer_f -= Time.deltaTime;
+            timer_i = (int)timer_f;
+            Second();
+            Debug.Log("1");
+        }
+        TimeManager();
     }
     void Second()
     {
@@ -55,7 +48,17 @@ public class Timecounting : MonoBehaviour
         {
             GetComponent<Text>().text = "秒數 : 00";
         }
-
+        Debug.Log("2");
+    }
+    void TimeManager()
+    {
+        if(second == 0)
+        {
+            gamestart = false;
+            timer_f = timer_F;
+            timer_i = timer_I;
+            Debug.Log("3");
+        }
     }
     void turn_time() 
     {

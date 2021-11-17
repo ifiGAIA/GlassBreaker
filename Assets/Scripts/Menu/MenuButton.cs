@@ -9,12 +9,14 @@ public class MenuButton : MonoBehaviour
     Color imagecolor;
     public AudioClip knock;
     AudioSource audioSource;
+    Timecounting timecounting;
     // Start is called before the first frame update
     void Start()
     {
         image = GetComponent<Image>();
         imagecolor = image.color;
         audioSource = GetComponent<AudioSource>();
+        timecounting = GameObject.Find("Time").GetComponent<Timecounting>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class MenuButton : MonoBehaviour
         {
             imagecolor.a = 0.4f;
             image.color = new Color(image.color.r,image.color.g,image.color.b,imagecolor.a);
+            timecounting.gamestart = true;
         }
     }
 }
