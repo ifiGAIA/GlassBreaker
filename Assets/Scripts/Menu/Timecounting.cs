@@ -45,7 +45,7 @@ public class Timecounting : MonoBehaviour
         }
         else
         {
-            GetComponent<Text>().text = "秒數 : 00";
+            GetComponent<Text>().text = "秒數 : 60";
         }
     }
     void TimeManager()

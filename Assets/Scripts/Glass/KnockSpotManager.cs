@@ -37,7 +37,6 @@ public class KnockSpotManager : MonoBehaviour
             KnockSpot();
             knocking = false;
         }
-        // KnockSpot();
         SpotManager();
     }
     void SpotManager()
@@ -102,7 +101,7 @@ public class KnockSpotManager : MonoBehaviour
             Invoke("Destroyspot",0.5f);
         }
     }
-    void Destroyspot()
+    public void Destroyspot()
     {
         for(int i=0; i<=5; i++)
         {

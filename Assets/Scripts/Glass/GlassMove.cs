@@ -6,12 +6,14 @@ public enum GameLevel
 {
     Game1,
     Game2,
-    Game3
+    Game3,
+    GameOver
 }
 public class GlassMove : MonoBehaviour
 {
     GlassInstantiate glassInstantiate;
     public Timecounting timecounting;
+    public Scoreboard scoreboard;
     public GameLevel gameLevel;
     public bool moveistrue = false;
     private float PosZ;
@@ -34,6 +36,7 @@ public class GlassMove : MonoBehaviour
     {
         glassInstantiate = GameObject.Find("Glass").GetComponent<GlassInstantiate>();
         timecounting = timecounting.GetComponent<Timecounting>();
+        scoreboard = scoreboard.GetComponent<Scoreboard>();
         audioSource = GetComponent<AudioSource>();
         // gameLevel = GameLevel.Game1;
     }
@@ -60,6 +63,7 @@ public class GlassMove : MonoBehaviour
         if(glassaudio == false)
         {
             audioSource.PlayOneShot(glassshatter);
+            noglass = true;
             glassaudio = true;
         }
     }
@@ -67,6 +71,7 @@ public class GlassMove : MonoBehaviour
     {
         //多少玻璃被打碎
         glasscount += 1;
+        scoreboard.ScoreAdd();
     }
     void Glassisnone()
     {
@@ -90,11 +95,19 @@ public class GlassMove : MonoBehaviour
                 gameLevel = GameLevel.Game3;
                 Invoke("GlassReborn",gameswitchTime);
             }
+            else if(gameLevel == GameLevel.Game3)
+            {
+                gameLevel = GameLevel.GameOver;
+            }
             noglass = false;
         }
         if(timecounting.second == 0)
         {
             timesUp = true;
+        }
+        if(timecounting.gamestart == true)
+        {
+            glassaudio = false;
         }
     }
     void GlassReborn()

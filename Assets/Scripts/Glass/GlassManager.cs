@@ -94,8 +94,9 @@ public class GlassManager : MonoBehaviour
             meshRenderer.enabled = false;
             boxCollider.enabled = false;
             explosionGlass.SetActive(true);
-            Invoke("DestroyGlass",10f);
+            Invoke("DestroyGlass",5f);
             glassMove.Glassshatter();
+            KnockSpotscollect.GetComponent<KnockSpotManager>().Destroyspot();
         }
     }
 
@@ -122,6 +123,7 @@ public class GlassManager : MonoBehaviour
     void DestroyGlass()
     {
         Destroy(gameObject);
+        glassMove.timesUp = false;
     }
     public void KnockCount()
     {
