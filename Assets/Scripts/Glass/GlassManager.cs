@@ -147,7 +147,6 @@ public class GlassManager : MonoBehaviour
             {
                 int Random_Objects = Random.Range(0, 0);
                 KnockSpotsManager = Instantiate(Objects[Random_Objects], KnockSpots[0].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
-                // Instantiate(Objects[Random_Objects], KnockSpots[0].GetChild(i).gameObject.transform.position,knock_Position.transform.rotation);
                 if(i==4)
                 {
                     spotisexist= true;

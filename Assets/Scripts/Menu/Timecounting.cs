@@ -22,8 +22,6 @@ public class Timecounting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // timer_f -= Time.deltaTime;
-        // timer_i = (int)timer_f;
         turn_time();
         if(gamestart)
         {
@@ -31,7 +29,10 @@ public class Timecounting : MonoBehaviour
             timer_i = (int)timer_f;
             Second();
         }
-        TimeManager();
+        if(second == 0)
+        {
+            ReTime();
+        }
     }
     void Second()
     {
@@ -48,15 +49,14 @@ public class Timecounting : MonoBehaviour
             GetComponent<Text>().text = "秒數 : 60";
         }
     }
-    void TimeManager()
+    public void ReTime()
     {
-        if(second == 0)
-        {
-            gamestart = false;
-            timer_f = timer_F;
-            timer_i = timer_I;
-        }
+        gamestart = false;
+        timer_f = timer_F;
+        timer_i = timer_I;
+        GetComponent<Text>().text = "秒數 : 60";
     }
+    
     void turn_time() 
     {
         minute = timer_i / 60;

@@ -99,6 +99,7 @@ public class GlassMove : MonoBehaviour
             {
                 gameLevel = GameLevel.GameOver;
             }
+            timecounting.gamestart = false;
             noglass = false;
         }
         if(timecounting.second == 0)
@@ -113,6 +114,7 @@ public class GlassMove : MonoBehaviour
     void GlassReborn()
     {
         glassInstantiate.GlassReborn();
+        timecounting.ReTime();
     }
     public void Move()
     {

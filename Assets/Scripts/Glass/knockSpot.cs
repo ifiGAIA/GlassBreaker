@@ -35,7 +35,7 @@ public class knockSpot : MonoBehaviour
         int Random_Objects = Random.Range(0, Objects.Length);
         if(glassMove.gameLevel == GameLevel.Game1)
         {
-            if(other.gameObject.tag == "Left_hammer" || other.gameObject.tag == "Right_hammer")
+            if(other.gameObject.tag == "Left_hammer" && glassMove.timecounting.gamestart == true || other.gameObject.tag == "Right_hammer" && glassMove.timecounting.gamestart == true)
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -52,7 +52,7 @@ public class knockSpot : MonoBehaviour
         }
         else if(glassMove.gameLevel == GameLevel.Game2)
         {
-            if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
+            if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red" && glassMove.timecounting.gamestart == true)
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -66,7 +66,7 @@ public class knockSpot : MonoBehaviour
                 // Destroy(gameObject);
                 // Debug.Log("紅色");
             }
-            else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
+            else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green" && glassMove.timecounting.gamestart == true)
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -83,7 +83,7 @@ public class knockSpot : MonoBehaviour
         }
         else if(glassMove.gameLevel == GameLevel.Game3)
         {
-            if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red")
+            if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red" && glassMove.timecounting.gamestart == true)
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -97,7 +97,7 @@ public class knockSpot : MonoBehaviour
                 // Destroy(gameObject);
                 // Debug.Log("紅色");
             }
-            else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
+            else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green" && glassMove.timecounting.gamestart == true)
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -111,7 +111,7 @@ public class knockSpot : MonoBehaviour
                 // Destroy(gameObject);
                 // Debug.Log("綠色");
             }
-            else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
+            else if(other.gameObject.tag == "foot" && gameObject.tag == "purple" && glassMove.timecounting.gamestart == true)
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
