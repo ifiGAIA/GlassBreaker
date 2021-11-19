@@ -10,7 +10,8 @@ public class Scoreboard : MonoBehaviour
     public int score1 = 0;
     public int score2 = 0;
     public int score3 = 0;
-    private int glasscount = 0;
+    private int finalscore;
+    public int glasscount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +92,8 @@ public class Scoreboard : MonoBehaviour
     }
     void GameOver()
     {
-        GetComponent<Text>().text = "  總分 : " + score1 + score2 + score3;
+        finalscore = score1 + score2 + score3;
+        GetComponent<Text>().text = "  總分 : " + finalscore;
         Time.SetActive(false);
     }
 }

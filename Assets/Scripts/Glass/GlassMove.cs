@@ -30,6 +30,11 @@ public class GlassMove : MonoBehaviour
     public AudioClip glassshatter;
     AudioSource audioSource;
     private bool glassaudio;
+
+    public GameObject Lefthand_game1;
+    public GameObject Lefthand_game2;
+    public GameObject Righthand_game1;
+    public GameObject Righthand_game2;
     
     // Start is called before the first frame update
     void Start()
@@ -54,6 +59,20 @@ public class GlassMove : MonoBehaviour
         if(moveistrue == true)
         {
             Move();
+        }
+        if(gameLevel == GameLevel.Game1)
+        {
+            Lefthand_game1.SetActive(true);
+            Righthand_game1.SetActive(true);
+            Lefthand_game2.SetActive(false);
+            Righthand_game2.SetActive(false);
+        }
+        else if(gameLevel == GameLevel.Game2)
+        {
+            Lefthand_game1.SetActive(false);
+            Righthand_game1.SetActive(false);
+            Lefthand_game2.SetActive(true);
+            Righthand_game2.SetActive(true);
         }
         Glassisnone();
         GameLevelSwitch();
@@ -87,17 +106,18 @@ public class GlassMove : MonoBehaviour
         {
             if(gameLevel == GameLevel.Game1)
             {
-                gameLevel = GameLevel.Game2;
+                // gameLevel = GameLevel.Game2;
                 Invoke("GlassReborn",gameswitchTime);
             }
             else if(gameLevel == GameLevel.Game2)
             {
-                gameLevel = GameLevel.Game3;
+                // gameLevel = GameLevel.Game3;
                 Invoke("GlassReborn",gameswitchTime);
             }
             else if(gameLevel == GameLevel.Game3)
             {
-                gameLevel = GameLevel.GameOver;
+                Invoke("GlassReborn",gameswitchTime);
+                // gameLevel = GameLevel.GameOver;
             }
             timecounting.gamestart = false;
             noglass = false;
@@ -115,6 +135,21 @@ public class GlassMove : MonoBehaviour
     {
         glassInstantiate.GlassReborn();
         timecounting.ReTime();
+        scoreboard.glasscount = 0;
+        if(gameLevel == GameLevel.Game1)
+        {
+            gameLevel = GameLevel.Game2;
+            // Invoke("GlassReborn",gameswitchTime);
+        }
+        else if(gameLevel == GameLevel.Game2)
+        {
+            gameLevel = GameLevel.Game3;
+            // Invoke("GlassReborn",gameswitchTime);
+        }
+        else if(gameLevel == GameLevel.Game3)
+        {
+            gameLevel = GameLevel.GameOver;
+        }
     }
     public void Move()
     {
