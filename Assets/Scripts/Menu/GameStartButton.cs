@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuButton : MonoBehaviour
+public class GameStartButton : MonoBehaviour
 {
     Image image;
     Color imagecolor;

@@ -7,6 +7,7 @@ public class GlassInstantiate : MonoBehaviour
     public Transform InitPos;
     public GameObject Prefab;
     private GameObject glass;
+    public GameObject TimeCountDown;
     public int glasscount;
     public bool gamestart;
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class GlassInstantiate : MonoBehaviour
     public void GlassReborn()
     {
         gamestart = true;
+        TimeCountDown.SetActive(true);
     }
     void Glassinstantiate()
     {

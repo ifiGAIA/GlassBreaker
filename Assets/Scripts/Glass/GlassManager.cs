@@ -117,7 +117,7 @@ public class GlassManager : MonoBehaviour
             boxCollider.enabled = false;
             explosionGlass.SetActive(true);
             canMove = false;
-            Invoke("DestroyGlass",10f);
+            Invoke("DestroyGlass",5f);
         }
     }
     void DestroyGlass()
