@@ -67,7 +67,7 @@ public class GlassMove : MonoBehaviour
             Lefthand_game2.SetActive(false);
             Righthand_game2.SetActive(false);
         }
-        else if(gameLevel == GameLevel.Game2)
+        else
         {
             Lefthand_game1.SetActive(false);
             Righthand_game1.SetActive(false);
@@ -106,18 +106,15 @@ public class GlassMove : MonoBehaviour
         {
             if(gameLevel == GameLevel.Game1)
             {
-                // gameLevel = GameLevel.Game2;
                 Invoke("GlassReborn",gameswitchTime);
             }
             else if(gameLevel == GameLevel.Game2)
             {
-                // gameLevel = GameLevel.Game3;
                 Invoke("GlassReborn",gameswitchTime);
             }
             else if(gameLevel == GameLevel.Game3)
             {
                 Invoke("GlassReborn",gameswitchTime);
-                // gameLevel = GameLevel.GameOver;
             }
             timecounting.gamestart = false;
             noglass = false;
@@ -133,18 +130,19 @@ public class GlassMove : MonoBehaviour
     }
     void GlassReborn()
     {
-        glassInstantiate.GlassReborn();
-        timecounting.ReTime();
-        scoreboard.glasscount = 0;
         if(gameLevel == GameLevel.Game1)
         {
             gameLevel = GameLevel.Game2;
-            // Invoke("GlassReborn",gameswitchTime);
+            glassInstantiate.GlassReborn();
+            timecounting.ReTime();
+            scoreboard.glasscount = 0;
         }
         else if(gameLevel == GameLevel.Game2)
         {
             gameLevel = GameLevel.Game3;
-            // Invoke("GlassReborn",gameswitchTime);
+            glassInstantiate.GlassReborn();
+            timecounting.ReTime();
+            scoreboard.glasscount = 0;
         }
         else if(gameLevel == GameLevel.Game3)
         {

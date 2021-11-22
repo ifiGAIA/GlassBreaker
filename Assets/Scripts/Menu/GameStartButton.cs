@@ -10,6 +10,7 @@ public class GameStartButton : MonoBehaviour
     public AudioClip knock;
     AudioSource audioSource;
     Timecounting timecounting;
+    BoxCollider boxCollider;
 
     float time_int = 4;
     public Text time_UI;
@@ -17,7 +18,8 @@ public class GameStartButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        image = GetComponent<Image>();
+        boxCollider = GetComponent<BoxCollider>();
+        image = gameObject.transform.GetChild(0).GetComponent<Image>();
         imagecolor = image.color;
         audioSource = GetComponent<AudioSource>();
         timecounting = GameObject.Find("Time").GetComponent<Timecounting>();
@@ -51,7 +53,9 @@ public class GameStartButton : MonoBehaviour
             imagecolor.a = 0.4f;
             image.color = new Color(image.color.r,image.color.g,image.color.b,imagecolor.a);
             countdown = true;
-            // timecounting.gamestart = true;
+            boxCollider.enabled = false;
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            gameObject.transform.GetChild(2).gameObject.SetActive(false);
         }
     }
     void timer()
@@ -64,6 +68,9 @@ public class GameStartButton : MonoBehaviour
             timecounting.gamestart = true;
             time_int = 4;
             countdown = false;
+            boxCollider.enabled = true;
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            gameObject.transform.GetChild(2).gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
     }

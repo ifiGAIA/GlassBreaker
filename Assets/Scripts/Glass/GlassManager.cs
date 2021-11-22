@@ -68,19 +68,19 @@ public class GlassManager : MonoBehaviour
     }
     void GameLevelSwitch()
     {
-        if(glassMove.gameLevel == GameLevel.Game1)
+        if(glassMove.gameLevel == GameLevel.Game1 && glassMove.timecounting.gamestart == true)
         {
             // KnockSpot_game1();
             KnockSpot_Game1();
             // Debug.Log("第一關");
         }
-        else if(glassMove.gameLevel == GameLevel.Game2)
+        else if(glassMove.gameLevel == GameLevel.Game2 && glassMove.timecounting.gamestart == true)
         {
             // KnockSpot_game2();
             KnockSpot_Game2();
             // Debug.Log("第二關");
         }
-        else if(glassMove.gameLevel == GameLevel.Game3)
+        else if(glassMove.gameLevel == GameLevel.Game3 && glassMove.timecounting.gamestart == true)
         {
             // KnockSpot_game3();
             KnockSpot_Game3();

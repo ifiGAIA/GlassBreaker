@@ -12,10 +12,14 @@ public class Scoreboard : MonoBehaviour
     public int score3 = 0;
     private int finalscore;
     public int glasscount = 0;
+    public AudioClip gameover;
+    AudioSource audioSource;
+    private bool gameOver;
     // Start is called before the first frame update
     void Start()
     {
         glassMove = glassMove.GetComponent<GlassMove>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -93,7 +97,13 @@ public class Scoreboard : MonoBehaviour
     void GameOver()
     {
         finalscore = score1 + score2 + score3;
-        GetComponent<Text>().text = "  總分 : " + finalscore;
-        Time.SetActive(false);
+        GetComponent<Text>().text = " ";
+        Time.GetComponent<Text>().fontSize = 150;
+        Time.GetComponent<Text>().text = "  總分 : " + finalscore;
+        if(gameOver == false)
+        {
+            audioSource.PlayOneShot(gameover);
+            gameOver = true;
+        }
     }
 }
