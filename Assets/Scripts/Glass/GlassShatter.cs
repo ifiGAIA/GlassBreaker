@@ -5,7 +5,7 @@ using UnityEngine;
 public class GlassShatter : MonoBehaviour
 {
     MeshRenderer meshRenderer;
-    BoxCollider boxCollider;
+    SphereCollider sphereCollider;
     public GameObject explosionGlass;
     public AudioClip glassshatter;
     AudioSource audioSource;
@@ -13,7 +13,7 @@ public class GlassShatter : MonoBehaviour
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
-        boxCollider = GetComponent<BoxCollider>();
+        sphereCollider = GetComponent<SphereCollider>();
         explosionGlass.SetActive(false);
         audioSource = GetComponent<AudioSource>();
     }
@@ -23,14 +23,35 @@ public class GlassShatter : MonoBehaviour
     {
         
     }
+    void DestroyGlass()
+    {
+        Destroy(gameObject);
+    }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Left_hammer" || other.gameObject.tag == "Right_hammer")
+        if(other.gameObject.tag == "Left_hammer" && gameObject.name == "glass_red")
         {
             audioSource.PlayOneShot(glassshatter);
             meshRenderer.enabled = false;
-            boxCollider.enabled = false;
+            sphereCollider.enabled = false;
             explosionGlass.SetActive(true);
+            Invoke("DestroyGlass",5f);
+        }
+        if(other.gameObject.tag == "Right_hammer" && gameObject.name == "glass_green")
+        {
+            audioSource.PlayOneShot(glassshatter);
+            meshRenderer.enabled = false;
+            sphereCollider.enabled = false;
+            explosionGlass.SetActive(true);
+            Invoke("DestroyGlass",5f);
+        }
+        if(other.gameObject.tag == "foot" && gameObject.name == "glass_purple")
+        {
+            audioSource.PlayOneShot(glassshatter);
+            meshRenderer.enabled = false;
+            sphereCollider.enabled = false;
+            explosionGlass.SetActive(true);
+            Invoke("DestroyGlass",5f);
         }
     }
 }
