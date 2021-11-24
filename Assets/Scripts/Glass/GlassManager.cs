@@ -61,7 +61,7 @@ public class GlassManager : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Left_hammer" || other.gameObject.tag == "Right_hammer")
+        if(other.gameObject.tag == "hammer")
         {
             audioSource.PlayOneShot(glassknock);
         }
