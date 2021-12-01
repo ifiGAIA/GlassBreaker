@@ -117,7 +117,7 @@ public class Scoreboard : MonoBehaviour
     }
     void GameOver()
     {
-        if(glassMove.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
+        if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
             finalscore = score1 + score2;
             GetComponent<Text>().text = " ";
@@ -129,7 +129,7 @@ public class Scoreboard : MonoBehaviour
                 gameOver = true;
             }
         }
-        else if(glassMove.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
+        else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
         {
             finalscore = score3 + score4;
             GetComponent<Text>().text = " ";

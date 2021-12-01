@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameDegreeOfDifficulty
+{
+    Simple,
+    Difficulty
+}
 public class GameManager : Singleton<GameManager>
 {
-    public static GameManager instance = null;
-    void Awake()
+    public GameDegreeOfDifficulty gameDegreeOfDifficulty;
+    protected override void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
+        base.Awake();
+        DontDestroyOnLoad(this);
     }
     // Start is called before the first frame update
     void Start()

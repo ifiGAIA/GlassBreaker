@@ -10,18 +10,18 @@ public enum GameLevel
     Game4,//紅腳
     GameOver
 }
-public enum GameDegreeOfDifficulty
-{
-    Simple,
-    Difficulty
-}
+// public enum GameDegreeOfDifficulty
+// {
+//     Simple,
+//     Difficulty
+// }
 public class GlassMove : MonoBehaviour
 {
     GlassInstantiate glassInstantiate;
     public Timecounting timecounting;
     public Scoreboard scoreboard;
     public GameLevel gameLevel;
-    public GameDegreeOfDifficulty gameDegreeOfDifficulty;
+    // public GameDegreeOfDifficulty gameDegreeOfDifficulty;
     public bool moveistrue = false;
     private float PosZ;
     private Vector3 finalPos;
@@ -50,6 +50,14 @@ public class GlassMove : MonoBehaviour
         timecounting = timecounting.GetComponent<Timecounting>();
         scoreboard = scoreboard.GetComponent<Scoreboard>();
         audioSource = GetComponent<AudioSource>();
+        if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
+        {
+            gameLevel = GameLevel.Game1;
+        }
+        else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
+        {
+            gameLevel = GameLevel.Game3;
+        }
         // gameLevel = GameLevel.Game1;
     }
 
@@ -109,7 +117,7 @@ public class GlassMove : MonoBehaviour
     }
     void GameLevelSwitch()
     {
-        if(gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
+        if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
             if(noglass)//時間到或是玻璃打完
             {
@@ -133,7 +141,7 @@ public class GlassMove : MonoBehaviour
                 glassaudio = false;
             }
         }
-        else if(gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
+        else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
         {
             if(noglass)//時間到或是玻璃打完
             {
@@ -185,7 +193,7 @@ public class GlassMove : MonoBehaviour
     }
     void GlassReborn()
     {
-        if(gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
+        if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
             if(gameLevel == GameLevel.Game1)
             {
@@ -199,7 +207,7 @@ public class GlassMove : MonoBehaviour
                 gameLevel = GameLevel.GameOver;
             }
         }
-        else if(gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
+        else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
         {
             if(gameLevel == GameLevel.Game3)
             {

@@ -37,6 +37,10 @@ public class GotoGame1 : MonoBehaviour
         {
             Glasstogame.SetActive(true);
         }
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            ToGame();
+        }
     }
     void ToGame()
     {

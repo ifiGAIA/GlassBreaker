@@ -68,7 +68,7 @@ public class GlassManager : MonoBehaviour
     }
     void GameLevelSwitch()
     {
-        if(glassMove.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
+        if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
             if(glassMove.gameLevel == GameLevel.Game1 && glassMove.timecounting.gamestart == true)
             {
@@ -79,7 +79,7 @@ public class GlassManager : MonoBehaviour
                 KnockSpot_Game2();
             }
         }
-        else if(glassMove.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
+        else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
         {
             if(glassMove.gameLevel == GameLevel.Game3 && glassMove.timecounting.gamestart == true)
             {
