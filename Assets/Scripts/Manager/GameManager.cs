@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    protected override void Awake()
+    public static GameManager instance = null;
+    void Awake()
     {
-        base.Awake();
-        DontDestroyOnLoad(this);
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
     }
     // Start is called before the first frame update
     void Start()

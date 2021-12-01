@@ -881,7 +881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323381751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.066, z: 0}
+  m_LocalPosition: {x: 0, y: 1.066, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1414,14 +1414,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a11fefc429b324c80c3a8d0ff8a5d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timecounting: {fileID: 0}
+  scoreboard: {fileID: 0}
   gameLevel: 2
   moveistrue: 0
   glassisbroken: 0
   speed: 1
-  TimesUp: 0
+  timesUp: 0
   noglass: 0
   glasscount: 0
   gameswitchTime: 0
+  glassshatter: {fileID: 0}
+  Lefthand_game1: {fileID: 0}
+  Lefthand_game2: {fileID: 0}
+  Righthand_game1: {fileID: 0}
+  Righthand_game2: {fileID: 0}
 --- !u!114 &488243947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1436,6 +1443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitPos: {fileID: 323381752}
   Prefab: {fileID: 578381679806122289, guid: 636dfc4cf2047fc4f9a3389f154ca232, type: 3}
+  TimeCountDown: {fileID: 0}
   glasscount: 10
   gamestart: 0
 --- !u!1001 &504354969

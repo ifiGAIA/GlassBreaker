@@ -4,10 +4,16 @@ using UnityEngine;
 
 public enum GameLevel
 {
-    Game1,
-    Game2,
-    Game3,
+    Game1,//紅
+    Game2,//紅綠
+    Game3,//紅綠腳
+    Game4,//紅腳
     GameOver
+}
+public enum GameDegreeOfDifficulty
+{
+    Simple,
+    Difficulty
 }
 public class GlassMove : MonoBehaviour
 {
@@ -15,6 +21,7 @@ public class GlassMove : MonoBehaviour
     public Timecounting timecounting;
     public Scoreboard scoreboard;
     public GameLevel gameLevel;
+    public GameDegreeOfDifficulty gameDegreeOfDifficulty;
     public bool moveistrue = false;
     private float PosZ;
     private Vector3 finalPos;
@@ -60,7 +67,7 @@ public class GlassMove : MonoBehaviour
         {
             Move();
         }
-        if(gameLevel == GameLevel.Game1)
+        if(gameLevel == GameLevel.Game1 || gameLevel == GameLevel.Game3)
         {
             Lefthand_game1.SetActive(true);
             Righthand_game1.SetActive(true);
@@ -102,52 +109,128 @@ public class GlassMove : MonoBehaviour
     }
     void GameLevelSwitch()
     {
-        if(noglass)//時間到或是玻璃打完
+        if(gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
-            if(gameLevel == GameLevel.Game1)
+            if(noglass)//時間到或是玻璃打完
             {
-                Invoke("GlassReborn",gameswitchTime);
+                if(gameLevel == GameLevel.Game1)
+                {
+                    Invoke("GlassReborn",gameswitchTime);
+                }
+                else if(gameLevel == GameLevel.Game2)
+                {
+                    Invoke("GlassReborn",gameswitchTime);
+                }
+                timecounting.gamestart = false;
+                noglass = false;
             }
-            else if(gameLevel == GameLevel.Game2)
+            if(timecounting.second == 0)
             {
-                Invoke("GlassReborn",gameswitchTime);
+                timesUp = true;
             }
-            else if(gameLevel == GameLevel.Game3)
+            if(timecounting.gamestart == true)
             {
-                Invoke("GlassReborn",gameswitchTime);
+                glassaudio = false;
             }
-            timecounting.gamestart = false;
-            noglass = false;
         }
-        if(timecounting.second == 0)
+        else if(gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
         {
-            timesUp = true;
+            if(noglass)//時間到或是玻璃打完
+            {
+                if(gameLevel == GameLevel.Game3)
+                {
+                    Invoke("GlassReborn",gameswitchTime);
+                }
+                else if(gameLevel == GameLevel.Game4)
+                {
+                    Invoke("GlassReborn",gameswitchTime);
+                }
+                timecounting.gamestart = false;
+                noglass = false;
+            }
+            if(timecounting.second == 0)
+            {
+                timesUp = true;
+            }
+            if(timecounting.gamestart == true)
+            {
+                glassaudio = false;
+            }
         }
-        if(timecounting.gamestart == true)
-        {
-            glassaudio = false;
-        }
+        // if(noglass)//時間到或是玻璃打完
+        // {
+        //     if(gameLevel == GameLevel.Game1)
+        //     {
+        //         Invoke("GlassReborn",gameswitchTime);
+        //     }
+        //     else if(gameLevel == GameLevel.Game2)
+        //     {
+        //         Invoke("GlassReborn",gameswitchTime);
+        //     }
+        //     else if(gameLevel == GameLevel.Game3)
+        //     {
+        //         Invoke("GlassReborn",gameswitchTime);
+        //     }
+        //     timecounting.gamestart = false;
+        //     noglass = false;
+        // }
+        // if(timecounting.second == 0)
+        // {
+        //     timesUp = true;
+        // }
+        // if(timecounting.gamestart == true)
+        // {
+        //     glassaudio = false;
+        // }
     }
     void GlassReborn()
     {
-        if(gameLevel == GameLevel.Game1)
+        if(gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
-            gameLevel = GameLevel.Game2;
-            glassInstantiate.GlassReborn();
-            timecounting.ReTime();
-            scoreboard.glasscount = 0;
+            if(gameLevel == GameLevel.Game1)
+            {
+                gameLevel = GameLevel.Game2;
+                glassInstantiate.GlassReborn();
+                timecounting.ReTime();
+                scoreboard.glasscount = 0;
+            }
+            else if(gameLevel == GameLevel.Game2)
+            {
+                gameLevel = GameLevel.GameOver;
+            }
         }
-        else if(gameLevel == GameLevel.Game2)
+        else if(gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
         {
-            gameLevel = GameLevel.Game3;
-            glassInstantiate.GlassReborn();
-            timecounting.ReTime();
-            scoreboard.glasscount = 0;
+            if(gameLevel == GameLevel.Game3)
+            {
+                gameLevel = GameLevel.Game4;
+                glassInstantiate.GlassReborn();
+                timecounting.ReTime();
+                scoreboard.glasscount = 0;
+            }
+            else if(gameLevel == GameLevel.Game4)
+            {
+                gameLevel = GameLevel.GameOver;
+            }
         }
-        else if(gameLevel == GameLevel.Game3)
-        {
-            gameLevel = GameLevel.GameOver;
-        }
+        // if(gameLevel == GameLevel.Game1)
+        // {
+        //     gameLevel = GameLevel.Game2;
+        //     glassInstantiate.GlassReborn();
+        //     timecounting.ReTime();
+        //     scoreboard.glasscount = 0;
+        // }
+        // else if(gameLevel == GameLevel.Game2)
+        // {
+        //     gameLevel = GameLevel.Game3;
+        //     glassInstantiate.GlassReborn();
+        //     timecounting.ReTime();
+        //     scoreboard.glasscount = 0;
+        // }
+        // else if(gameLevel == GameLevel.Game3)
+        // {
+        //     gameLevel = GameLevel.GameOver;
+        // }
     }
     public void Move()
     {

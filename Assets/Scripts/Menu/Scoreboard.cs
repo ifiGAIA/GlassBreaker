@@ -10,6 +10,7 @@ public class Scoreboard : MonoBehaviour
     public int score1 = 0;
     public int score2 = 0;
     public int score3 = 0;
+    public int score4 = 0;
     private int finalscore;
     public int glasscount = 0;
     public AudioClip gameover;
@@ -36,6 +37,10 @@ public class Scoreboard : MonoBehaviour
         else if(glassMove.gameLevel == GameLevel.Game3)
         {
             Scoring_Game3();
+        }
+        else if(glassMove.gameLevel == GameLevel.Game4)
+        {
+            Scoring_Game4();
         }
         else if(glassMove.gameLevel == GameLevel.GameOver)
         {
@@ -94,16 +99,56 @@ public class Scoreboard : MonoBehaviour
             GetComponent<Text>().text = "  分數 : " + score3;
         }
     }
+    void Scoring_Game4()
+    {
+        score4 = glasscount * 10;
+        if (score4 < 10)
+        {
+            GetComponent<Text>().text = "分數 : 0" + score4;
+        }
+        else if(score4 >= 10 && score4 <100)
+        {
+            GetComponent<Text>().text = "分數 : " + score4;
+        }
+        else
+        {
+            GetComponent<Text>().text = "  分數 : " + score4;
+        }
+    }
     void GameOver()
     {
-        finalscore = score1 + score2 + score3;
-        GetComponent<Text>().text = " ";
-        Time.GetComponent<Text>().fontSize = 150;
-        Time.GetComponent<Text>().text = "  總分 : " + finalscore;
-        if(gameOver == false)
+        if(glassMove.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
-            audioSource.PlayOneShot(gameover);
-            gameOver = true;
+            finalscore = score1 + score2;
+            GetComponent<Text>().text = " ";
+            Time.GetComponent<Text>().fontSize = 150;
+            Time.GetComponent<Text>().text = "  總分 : " + finalscore;
+            if(gameOver == false)
+            {
+                audioSource.PlayOneShot(gameover);
+                gameOver = true;
+            }
         }
+        else if(glassMove.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
+        {
+            finalscore = score3 + score4;
+            GetComponent<Text>().text = " ";
+            Time.GetComponent<Text>().fontSize = 150;
+            Time.GetComponent<Text>().text = "  總分 : " + finalscore;
+            if(gameOver == false)
+            {
+                audioSource.PlayOneShot(gameover);
+                gameOver = true;
+            }
+        }
+        // finalscore = score1 + score2 + score3;
+        // GetComponent<Text>().text = " ";
+        // Time.GetComponent<Text>().fontSize = 150;
+        // Time.GetComponent<Text>().text = "  總分 : " + finalscore;
+        // if(gameOver == false)
+        // {
+        //     audioSource.PlayOneShot(gameover);
+        //     gameOver = true;
+        // }
     }
 }

@@ -68,24 +68,46 @@ public class GlassManager : MonoBehaviour
     }
     void GameLevelSwitch()
     {
-        if(glassMove.gameLevel == GameLevel.Game1 && glassMove.timecounting.gamestart == true)
+        if(glassMove.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
-            // KnockSpot_game1();
-            KnockSpot_Game1();
-            // Debug.Log("第一關");
+            if(glassMove.gameLevel == GameLevel.Game1 && glassMove.timecounting.gamestart == true)
+            {
+                KnockSpot_Game1();
+            }
+            else if(glassMove.gameLevel == GameLevel.Game2 && glassMove.timecounting.gamestart == true)
+            {
+                KnockSpot_Game2();
+            }
         }
-        else if(glassMove.gameLevel == GameLevel.Game2 && glassMove.timecounting.gamestart == true)
+        else if(glassMove.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
         {
-            // KnockSpot_game2();
-            KnockSpot_Game2();
-            // Debug.Log("第二關");
+            if(glassMove.gameLevel == GameLevel.Game3 && glassMove.timecounting.gamestart == true)
+            {
+                KnockSpot_Game3();
+            }
+            else if(glassMove.gameLevel == GameLevel.Game4 && glassMove.timecounting.gamestart == true)
+            {
+                KnockSpot_Game4();
+            }
         }
-        else if(glassMove.gameLevel == GameLevel.Game3 && glassMove.timecounting.gamestart == true)
-        {
-            // KnockSpot_game3();
-            KnockSpot_Game3();
-            // Debug.Log("第三關");
-        }
+        // if(glassMove.gameLevel == GameLevel.Game1 && glassMove.timecounting.gamestart == true)
+        // {
+        //     // KnockSpot_game1();
+        //     KnockSpot_Game1();
+        //     // Debug.Log("第一關");
+        // }
+        // else if(glassMove.gameLevel == GameLevel.Game2 && glassMove.timecounting.gamestart == true)
+        // {
+        //     // KnockSpot_game2();
+        //     KnockSpot_Game2();
+        //     // Debug.Log("第二關");
+        // }
+        // else if(glassMove.gameLevel == GameLevel.Game3 && glassMove.timecounting.gamestart == true)
+        // {
+        //     // KnockSpot_game3();
+        //     KnockSpot_Game3();
+        //     // Debug.Log("第三關");
+        // }
     }
     void TimesUp()
     {
@@ -138,7 +160,7 @@ public class GlassManager : MonoBehaviour
             glassMove.GlassCount();
         }
     }
-    void KnockSpot_Game1()
+    void KnockSpot_Game1()//紅
     {
         // int Random_Objects = Random.Range(0, 2);
         if(spotisexist == false && canKnock == true && gameObject.name == "glass1")
@@ -273,7 +295,7 @@ public class GlassManager : MonoBehaviour
             }
         }
     }
-    void KnockSpot_Game2()
+    void KnockSpot_Game2()//紅綠
     {
         // int Random_Objects = Random.Range(0, 2);
         if(spotisexist == false && canKnock == true && gameObject.name == "glass1")
@@ -407,7 +429,161 @@ public class GlassManager : MonoBehaviour
             }
         }
     }
-    void KnockSpot_Game3()
+    void KnockSpot_Game3()//紅腳
+    {
+        // int Random_Objects = Random.Range(0, 2);
+        if(spotisexist == false && canKnock == true && gameObject.name == "glass1")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[0].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[0].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[0].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[0].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[0].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass2")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[1].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[1].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[1].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[1].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[1].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass3")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[2].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[2].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[2].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[2].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[2].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass4")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[3].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[3].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[3].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[3].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[3].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass5")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[4].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[4].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[4].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[4].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[4].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass6")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[5].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[5].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[5].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[5].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[5].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass7")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[6].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[6].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[6].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[6].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[6].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass8")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[7].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[7].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[7].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[7].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[7].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass9")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[8].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[8].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[8].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[8].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[8].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+        else if(spotisexist == false && canKnock == true && gameObject.name == "glass10")
+        {
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[9].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[9].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[9].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[9].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[9].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
+
+            spotisexist= true;
+        }
+    }
+    void KnockSpot_Game4()//紅綠腳
     {
         // int Random_Objects = Random.Range(0, 2);
         if(spotisexist == false && canKnock == true && gameObject.name == "glass1")
@@ -561,6 +737,7 @@ public class GlassManager : MonoBehaviour
             spotisexist= true;
         }
     }
+    
     void KnockSpot_game1()
     {
         int Random_Objects = Random.Range(0, 0);
