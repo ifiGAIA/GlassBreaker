@@ -8,6 +8,7 @@ public class GameStartButton : MonoBehaviour
     Image image;
     Color imagecolor;
     public AudioClip knock;
+    public AudioClip Ready;
     AudioSource audioSource;
     Timecounting timecounting;
     BoxCollider boxCollider;
@@ -36,6 +37,11 @@ public class GameStartButton : MonoBehaviour
         {
             time_UI.text = " ";
         }
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            audioSource.PlayOneShot(Ready);
+            countdown = true;
+        }
     }
     void OnTriggerEnter(Collider other)
     {
@@ -52,6 +58,7 @@ public class GameStartButton : MonoBehaviour
         {
             imagecolor.a = 0.4f;
             image.color = new Color(image.color.r,image.color.g,image.color.b,imagecolor.a);
+            audioSource.PlayOneShot(Ready);
             countdown = true;
             boxCollider.enabled = false;
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
@@ -65,13 +72,19 @@ public class GameStartButton : MonoBehaviour
         time_UI.text = time.ToString();
         if (time == 0)
         {
-            timecounting.gamestart = true;
-            time_int = 4;
-            countdown = false;
-            boxCollider.enabled = true;
-            gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            gameObject.transform.GetChild(2).gameObject.SetActive(true);
-            gameObject.SetActive(false);
+            time_UI.text = "GO!";
+            timecounting.TimeSound();
+            Invoke("GameStart",2f);
         }
+    }
+    void GameStart()
+    {
+        timecounting.gamestart = true;
+        time_int = 4;
+        countdown = false;
+        boxCollider.enabled = true;
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        gameObject.transform.GetChild(2).gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

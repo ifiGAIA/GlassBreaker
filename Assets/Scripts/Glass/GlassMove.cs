@@ -130,6 +130,7 @@ public class GlassMove : MonoBehaviour
                     Invoke("GlassReborn",gameswitchTime);
                 }
                 timecounting.gamestart = false;
+                timecounting.audioSource.Stop();
                 noglass = false;
             }
             if(timecounting.second == 0)
@@ -154,6 +155,7 @@ public class GlassMove : MonoBehaviour
                     Invoke("GlassReborn",gameswitchTime);
                 }
                 timecounting.gamestart = false;
+                timecounting.audioSource.Stop();
                 noglass = false;
             }
             if(timecounting.second == 0)

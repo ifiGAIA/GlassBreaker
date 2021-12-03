@@ -7,10 +7,12 @@ public class Scoreboard : MonoBehaviour
 {
     public GlassMove glassMove;
     public GameObject Time;
-    public int score1 = 0;
-    public int score2 = 0;
+    // public int score1 = 0;
+    // public int score2 = 0;
     public int score3 = 0;
     public int score4 = 0;
+    public int time1;
+    public int time2;
     private int finalscore;
     public int glasscount = 0;
     public AudioClip gameover;
@@ -53,34 +55,28 @@ public class Scoreboard : MonoBehaviour
     }
     void Scoring_Game1()
     {
-        score1 = glasscount * 10;
-        if (score1 < 10)
+        time1 = 60 - Time.GetComponent<Timecounting>().second;
+        // score1 = glasscount * 10;
+        if (glasscount < 10)
         {
-            GetComponent<Text>().text = "分數 : 0" + score1;
+            GetComponent<Text>().text = "擊碎玻璃數 : 0" + glasscount;
         }
-        else if(score1 >= 10 && score1 <100)
+        else if(glasscount == 10)
         {
-            GetComponent<Text>().text = "分數 : " + score1;
-        }
-        else
-        {
-            GetComponent<Text>().text = "  分數 : " + score1;
+            GetComponent<Text>().text = "擊碎玻璃數 : " + glasscount;
         }
     }
     void Scoring_Game2()
     {
-        score2 = glasscount * 10;
-        if (score2 < 10)
+        time2 = 60 - Time.GetComponent<Timecounting>().second;
+        // score2 = glasscount * 10;
+        if (glasscount < 10)
         {
-            GetComponent<Text>().text = "分數 : 0" + score2;
+            GetComponent<Text>().text = "擊碎玻璃數 : 0" + glasscount;
         }
-        else if(score2 >= 10 && score2 <100)
+        else if(glasscount == 10)
         {
-            GetComponent<Text>().text = "分數 : " + score2;
-        }
-        else
-        {
-            GetComponent<Text>().text = "  分數 : " + score2;
+            GetComponent<Text>().text = "擊碎玻璃數 : " + glasscount;
         }
     }
     void Scoring_Game3()
@@ -119,10 +115,10 @@ public class Scoreboard : MonoBehaviour
     {
         if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
-            finalscore = score1 + score2;
+            finalscore = time1 + time2;
             GetComponent<Text>().text = " ";
             Time.GetComponent<Text>().fontSize = 150;
-            Time.GetComponent<Text>().text = "  總分 : " + finalscore;
+            Time.GetComponent<Text>().text = "總秒數 : " + finalscore;
             if(gameOver == false)
             {
                 audioSource.PlayOneShot(gameover);

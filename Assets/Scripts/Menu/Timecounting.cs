@@ -12,12 +12,14 @@ public class Timecounting : MonoBehaviour
     public bool gamestart;
     public float timer_F;
     private int timer_I = 10;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         gamestart = false;
         timer_f = timer_F;
         timer_i = timer_I;
+        audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -33,12 +35,22 @@ public class Timecounting : MonoBehaviour
         {
             ReTime();
         }
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            gamestart = true;
+            audioSource.Play();
+        }
+    }
+    public void TimeSound()
+    {
+        audioSource.Play();
     }
     void Second()
     {
         if (second < 10 && second > 0)
         {
             GetComponent<Text>().text = "秒數 : 0" + second;
+            audioSource.volume = 1;
         }
         else if(second >=10)
         {
@@ -47,6 +59,7 @@ public class Timecounting : MonoBehaviour
         else
         {
             GetComponent<Text>().text = "秒數 : 60";
+            audioSource.Stop();
         }
     }
     public void ReTime()
