@@ -128,9 +128,9 @@ public class Scoreboard : MonoBehaviour
         else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
         {
             finalscore = score3 + score4;
-            GetComponent<Text>().text = " ";
-            Time.GetComponent<Text>().fontSize = 150;
-            Time.GetComponent<Text>().text = "  總分 : " + finalscore;
+            Time.GetComponent<Text>().text = " ";
+            GetComponent<Text>().fontSize = 150;
+            GetComponent<Text>().text = "  總分 : " + finalscore;
             if(gameOver == false)
             {
                 audioSource.PlayOneShot(gameover);
