@@ -10,6 +10,9 @@ public enum GameDegreeOfDifficulty
 public class GameManager : Singleton<GameManager>
 {
     public GameDegreeOfDifficulty gameDegreeOfDifficulty;
+    public bool leftFoot;
+    public bool rightFoot;
+
     protected override void Awake()
     {
         base.Awake();

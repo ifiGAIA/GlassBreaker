@@ -42,6 +42,9 @@ public class GlassMove : MonoBehaviour
     public GameObject Lefthand_game2;
     public GameObject Righthand_game1;
     public GameObject Righthand_game2;
+
+    public GameObject Leftfoot;
+    public GameObject Rightfoot;
     
     // Start is called before the first frame update
     void Start()
@@ -75,6 +78,28 @@ public class GlassMove : MonoBehaviour
         {
             Move();
         }
+        ChooseFootHammer();
+        Glassisnone();
+        GameLevelSwitch();
+    }
+    void ChooseFootHammer()
+    {
+        if(GameManager.Instance.leftFoot == true)
+        {
+            Leftfoot.SetActive(true);
+            Rightfoot.SetActive(false);
+        }
+        else if(GameManager.Instance.rightFoot == true)
+        {
+            Leftfoot.SetActive(false);
+            Rightfoot.SetActive(true);
+        }
+        else
+        {
+            Leftfoot.SetActive(false);
+            Rightfoot.SetActive(false);
+        }
+
         if(gameLevel == GameLevel.Game1 || gameLevel == GameLevel.Game3)
         {
             Lefthand_game1.SetActive(true);
@@ -89,8 +114,6 @@ public class GlassMove : MonoBehaviour
             Lefthand_game2.SetActive(true);
             Righthand_game2.SetActive(true);
         }
-        Glassisnone();
-        GameLevelSwitch();
     }
     public void Glassshatter()
     {
