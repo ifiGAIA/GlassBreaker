@@ -42,6 +42,7 @@ public class GlassMove : MonoBehaviour
     public GameObject Lefthand_game2;
     public GameObject Righthand_game1;
     public GameObject Righthand_game2;
+    public GameObject Righthand;
 
     public GameObject Leftfoot;
     public GameObject Rightfoot;
@@ -102,17 +103,19 @@ public class GlassMove : MonoBehaviour
 
         if(gameLevel == GameLevel.Game1 || gameLevel == GameLevel.Game3)
         {
-            Lefthand_game1.SetActive(true);
-            Righthand_game1.SetActive(true);
-            Lefthand_game2.SetActive(false);
-            Righthand_game2.SetActive(false);
+            // Lefthand_game1.SetActive(true);
+            // Righthand_game1.SetActive(true);
+            // Lefthand_game2.SetActive(false);
+            // Righthand_game2.SetActive(false);
+            Righthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.red;
         }
         else
         {
-            Lefthand_game1.SetActive(false);
-            Righthand_game1.SetActive(false);
-            Lefthand_game2.SetActive(true);
-            Righthand_game2.SetActive(true);
+            // Lefthand_game1.SetActive(false);
+            // Righthand_game1.SetActive(false);
+            // Lefthand_game2.SetActive(true);
+            // Righthand_game2.SetActive(true);
+            Righthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.green;
         }
     }
     public void Glassshatter()
