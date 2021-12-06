@@ -603,7 +603,7 @@ public class GlassManager : MonoBehaviour
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass2")
         {
-            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[1].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[1].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[1].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
@@ -626,7 +626,7 @@ public class GlassManager : MonoBehaviour
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[2].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
-            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[2].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[2].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
 
             spotisexist= true;
@@ -637,7 +637,7 @@ public class GlassManager : MonoBehaviour
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[3].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
-            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[3].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[3].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[3].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
@@ -663,7 +663,7 @@ public class GlassManager : MonoBehaviour
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass6")
         {
-            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[5].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[5].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[5].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
@@ -671,7 +671,7 @@ public class GlassManager : MonoBehaviour
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[5].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
-            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[5].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[5].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
 
             spotisexist= true;
@@ -686,14 +686,14 @@ public class GlassManager : MonoBehaviour
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[6].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
-            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[6].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[6].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
 
             spotisexist= true;
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass8")
         {
-            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[7].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[7].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[7].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
@@ -708,15 +708,15 @@ public class GlassManager : MonoBehaviour
         }
         else if(spotisexist == false && canKnock == true && gameObject.name == "glass9")
         {
-            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[8].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[8].GetChild(0).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[8].GetChild(1).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
-            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[8].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[8].GetChild(2).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
             KnockSpotsManager = Instantiate(Objects[2], KnockSpots_G3[8].GetChild(3).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
-            KnockSpotsManager = Instantiate(Objects[0], KnockSpots_G3[8].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
+            KnockSpotsManager = Instantiate(Objects[1], KnockSpots_G3[8].GetChild(4).gameObject.transform.position,knock_Position.transform.rotation);
             KnockSpotsManager.transform.parent = KnockSpotscollect.transform;
 
             spotisexist= true;

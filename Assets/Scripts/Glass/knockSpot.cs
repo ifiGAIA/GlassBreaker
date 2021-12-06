@@ -83,6 +83,37 @@ public class knockSpot : MonoBehaviour
         }
         else if(glassMove.gameLevel == GameLevel.Game3)
         {
+            if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red" && glassMove.timecounting.gamestart == true || other.gameObject.tag == "Right_hammer" && gameObject.tag == "red" && glassMove.timecounting.gamestart == true)
+            {
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack.transform.parent = Glasscrack;
+
+                // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
+                Glass.KnockCount();
+
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
+                // Debug.Log("紅色");
+            }
+            else if(other.gameObject.tag == "foot" && gameObject.tag == "purple" && glassMove.timecounting.gamestart == true)
+            {
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack.transform.parent = Glasscrack;
+                
+                // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
+                Glass.KnockCount();
+
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
+                // Debug.Log("紫色");
+            }
+        }
+        else if(glassMove.gameLevel == GameLevel.Game4)
+        {
             if(other.gameObject.tag == "Left_hammer" && gameObject.tag == "red" && glassMove.timecounting.gamestart == true)
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
