@@ -103,6 +103,12 @@ public class KnockSpotManager : MonoBehaviour
     }
     public void Destroyspot()
     {
+        start = true;
+        spot1 = true;
+        spot2 = false;
+        spot3 = false;
+        spot4 = false;
+        spot5 = false;
         for(int i=0; i<=5; i++)
         {
             Destroy(Knock.GetChild(i).gameObject);

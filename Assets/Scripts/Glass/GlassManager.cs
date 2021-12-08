@@ -116,6 +116,7 @@ public class GlassManager : MonoBehaviour
             meshRenderer.enabled = false;
             boxCollider.enabled = false;
             explosionGlass.SetActive(true);
+            crack.SetActive(false);
             Invoke("DestroyGlass",5f);
             glassMove.Glassshatter();
             KnockSpotscollect.GetComponent<KnockSpotManager>().Destroyspot();

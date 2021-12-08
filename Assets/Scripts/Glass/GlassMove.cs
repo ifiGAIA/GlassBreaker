@@ -162,6 +162,7 @@ public class GlassMove : MonoBehaviour
             if(timecounting.second == 0)
             {
                 timesUp = true;
+                glasscount = 0;
             }
             if(timecounting.gamestart == true)
             {

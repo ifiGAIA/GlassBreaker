@@ -72,7 +72,7 @@ public class Timecounting : MonoBehaviour
     
     void turn_time() 
     {
-        minute = timer_i / 60;
-        second = timer_i %60;
+        minute = timer_i / 70;
+        second = timer_i %70;
     }
 }
