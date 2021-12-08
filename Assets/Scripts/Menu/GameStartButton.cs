@@ -12,6 +12,7 @@ public class GameStartButton : MonoBehaviour
     AudioSource audioSource;
     Timecounting timecounting;
     BoxCollider boxCollider;
+    public GameObject Rule;
 
     float time_int = 4;
     public Text time_UI;
@@ -63,6 +64,7 @@ public class GameStartButton : MonoBehaviour
             boxCollider.enabled = false;
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             gameObject.transform.GetChild(2).gameObject.SetActive(false);
+            Rule.SetActive(false);
         }
     }
     void timer()
