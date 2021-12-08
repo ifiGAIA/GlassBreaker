@@ -35,6 +35,11 @@ public class LightShake : MonoBehaviour
         {
             isshake = false;
         }
+        if(timecounting.gamestart == false)
+        {
+            lightshake.color = normalLight.GetComponent<Light>().color;
+            meshRenderer.material = white;
+        }
         if(isshake)
         {
             Shaking();
