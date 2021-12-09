@@ -5,26 +5,68 @@ using UnityEngine;
 public class GlassShatter : MonoBehaviour
 {
     MeshRenderer meshRenderer;
-    SphereCollider sphereCollider;
+    BoxCollider boxCollider;
     GotoGame1 gotoGame1;
     public GameObject explosionGlass;
+    public AudioClip glassbroken;
     public AudioClip glassshatter;
     AudioSource audioSource;
     public bool gameStart;
+
+    public GameObject glassPos;
+    public GameObject knock_Position;
+    public GameObject[] Objects;
+    public bool canKnock = false;
+    public bool spotisexist = false;
+    public bool canMove = false;
+    public int knockcount = 0;
     // Start is called before the first frame update
     void Start()
     {
         gotoGame1 = GameObject.Find("Table").GetComponent<GotoGame1>();
         meshRenderer = GetComponent<MeshRenderer>();
-        sphereCollider = GetComponent<SphereCollider>();
+        boxCollider = GetComponent<BoxCollider>();
         explosionGlass.SetActive(false);
         audioSource = GetComponent<AudioSource>();
+        glassPos = GameObject.Find("glassPos");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        GlasscanKnock();
+        GlassSwitch();
+    }
+    void GlassSwitch()
+    {
+        if(gotoGame1.glassChoose == GlassChoose.RR)
+        {
+            KnockSpot_game1();
+        }
+        else if(gotoGame1.glassChoose == GlassChoose.RG)
+        {
+            KnockSpot_game2();
+        }
+        else if(gotoGame1.glassChoose == GlassChoose.RRf)
+        {
+            KnockSpot_game3();
+        }
+        else if(gotoGame1.glassChoose == GlassChoose.RGf)
+        {
+            KnockSpot_game4();
+        }
+    }
+    void GlassBroken()
+    {
+        if(canMove == true)
+        {
+            audioSource.PlayOneShot(glassshatter);
+            meshRenderer.enabled = false;
+            boxCollider.enabled = false;
+            explosionGlass.SetActive(true);
+            canMove = false;
+            Invoke("DestroyGlass",5f);
+        }
     }
     void DestroyGlass()
     {
@@ -34,42 +76,84 @@ public class GlassShatter : MonoBehaviour
     {
         gameStart = true;
     }
-    void OnTriggerEnter(Collider other)
+    void GlasscanKnock()
     {
-        if(other.gameObject.tag == "Left_hammer" && gameObject.name == "glass_red")
+        if(gameObject.transform.position == glassPos.transform.position)
         {
-            audioSource.PlayOneShot(glassshatter);
-            meshRenderer.enabled = false;
-            sphereCollider.enabled = false;
-            explosionGlass.SetActive(true);
-            gotoGame1.glassred = true;
-            Invoke("DestroyGlass",5f);
+            canKnock = true;
         }
-        if(other.gameObject.tag == "Right_hammer" && gameObject.name == "glass_green")
+    }
+    public void KnockCount()
+    {
+        knockcount += 1;
+        audioSource.PlayOneShot(glassbroken);
+        if(knockcount == 5)
         {
-            audioSource.PlayOneShot(glassshatter);
-            meshRenderer.enabled = false;
-            sphereCollider.enabled = false;
-            explosionGlass.SetActive(true);
-            gotoGame1.glassgreen = true;
-            Invoke("DestroyGlass",5f);
+            canMove = true;
+            gotoGame1.glassisbroken = true;
         }
-        if(other.gameObject.tag == "foot" && gameObject.name == "glass_purple")
+    }
+    void KnockSpot_game1()
+    {
+        int Random_Objects = Random.Range(0, 0);
+        
+        if(spotisexist == false && knockcount<5 && canKnock == true)
         {
-            audioSource.PlayOneShot(glassshatter);
-            meshRenderer.enabled = false;
-            sphereCollider.enabled = false;
-            explosionGlass.SetActive(true);
-            gotoGame1.glasspurple = true;
-            Invoke("DestroyGlass",5f);
+            Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.8f,1.8f),0.8775f);
+            Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+            spotisexist =true;
         }
-        if(other.gameObject.tag == "Left_hammer" && gameObject.name == "glass_togame" || other.gameObject.tag == "Right_hammer" && gameObject.name == "glass_togame" || other.gameObject.tag == "foot" && gameObject.name == "glass_togame")
+    }
+    void KnockSpot_game2()
+    {
+        int Random_Objects = Random.Range(0, 2);
+
+        if(spotisexist == false && knockcount<5 && canKnock == true)
         {
-            audioSource.PlayOneShot(glassshatter);
-            meshRenderer.enabled = false;
-            sphereCollider.enabled = false;
-            explosionGlass.SetActive(true);
-            Invoke("ToGame",5f);
+            Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.8f,1.8f),0.8775f);
+            Debug.Log(Random_Objects);
+            Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+            spotisexist =true;
+        }
+    }
+    void KnockSpot_game3()
+    {
+        int Random_Objects = Random.Range(0, Objects.Length);
+
+        if(spotisexist == false && knockcount<5 && canKnock == true)
+        {
+            if(Random_Objects == 0 || Random_Objects == 1)
+            {
+                Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.8f,1.8f),0.8775f);
+                Instantiate(Objects[0], rnadomPos,knock_Position.transform.rotation);
+                spotisexist =true;
+            }
+            else if(Random_Objects == 2)
+            {
+                Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.3f,0.45f),0.8775f);
+                Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+                spotisexist =true;
+            }
+        }
+    }
+    void KnockSpot_game4()
+    {
+        int Random_Objects = Random.Range(0, Objects.Length);
+
+        if(spotisexist == false && knockcount<5 && canKnock == true)
+        {
+            if(Random_Objects == 0 || Random_Objects == 1)
+            {
+                Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.8f,1.8f),0.8775f);
+                Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+                spotisexist =true;
+            }
+            else if(Random_Objects == 2)
+            {
+                Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.3f,0.45f),0.8775f);
+                Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+                spotisexist =true;
+            }
         }
     }
 }
