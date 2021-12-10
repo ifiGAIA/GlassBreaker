@@ -10,7 +10,7 @@ public class Mainmenu : MonoBehaviour
     public GameObject Left;
     public GameObject Right;
     public GameObject Choosecanvas;
-    public bool rr,rg,rrf,rgf;
+    public GameObject[] Chooseglass;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,27 +21,26 @@ public class Mainmenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ChooseFoot();
+        ChooseFoot();
         ChooseCanvas();
     }
-    // void ChooseFoot()
-    // {
-    //     if(GameManager.Instance.leftFoot == true)
-    //     {
-    //         Leftfoot.SetActive(true);
-    //         Rightfoot.SetActive(false);
-    //     }
-    //     else if(GameManager.Instance.rightFoot == true)
-    //     {
-    //         Leftfoot.SetActive(false);
-    //         Rightfoot.SetActive(true);
-    //     }
-    //     else
-    //     {
-    //         Leftfoot.SetActive(false);
-    //         Rightfoot.SetActive(false);
-    //     }
-    // }
+    void ChooseFoot()
+    {
+        if(GameManager.Instance.Foot == true)
+        {
+            Chooseglass[0].SetActive(false);
+            Chooseglass[1].SetActive(false);
+            Chooseglass[2].SetActive(true);
+            Chooseglass[3].SetActive(true);
+        }
+        else
+        {
+            Chooseglass[0].SetActive(true);
+            Chooseglass[1].SetActive(true);
+            Chooseglass[2].SetActive(false);
+            Chooseglass[3].SetActive(false);
+        }
+    }
 
     void ChooseCanvas()
     {

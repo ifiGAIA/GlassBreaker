@@ -7,11 +7,12 @@ public class LightShake : MonoBehaviour
     public Timecounting timecounting;
     public GameObject Light;
     public GameObject normalLight;
-    public GameObject Ceilling;
-    MeshRenderer meshRenderer;
+    public GameObject[] streetLight;
+    // private GameObject Ceilling;
+    // MeshRenderer meshRenderer;
     Light lightshake;
-    Material white;
-    Material red;
+    // Material white;
+    // Material red;
     private float shake;
     public bool isshake;
     // Start is called before the first frame update
@@ -19,9 +20,9 @@ public class LightShake : MonoBehaviour
     {
         lightshake = Light.GetComponent<Light>();
         timecounting = timecounting.GetComponent<Timecounting>();
-        meshRenderer = Ceilling.GetComponent<MeshRenderer>();
-        white = meshRenderer.materials[0];
-        red = meshRenderer.materials[1];
+        // meshRenderer = Ceilling.GetComponent<MeshRenderer>();
+        // white = meshRenderer.materials[0];
+        // red = meshRenderer.materials[1];
     }
 
     // Update is called once per frame
@@ -38,7 +39,11 @@ public class LightShake : MonoBehaviour
         if(timecounting.gamestart == false)
         {
             lightshake.color = normalLight.GetComponent<Light>().color;
-            meshRenderer.material = white;
+            // meshRenderer.material = white;
+            for(int i=0; i<=5; i++)
+            {
+                streetLight[i].GetComponent<Light>().color = normalLight.GetComponent<Light>().color;
+            }
         }
         if(isshake)
         {
@@ -47,7 +52,11 @@ public class LightShake : MonoBehaviour
         else
         {
             lightshake.color = normalLight.GetComponent<Light>().color;
-            meshRenderer.material = white;
+            // meshRenderer.material = white;
+            for(int i=0; i<=5; i++)
+            {
+                streetLight[i].GetComponent<Light>().color = normalLight.GetComponent<Light>().color;
+            }
         }
     }
     void Shaking()
@@ -56,12 +65,20 @@ public class LightShake : MonoBehaviour
         if(shake % 1 > 0.5f)
         {
             lightshake.color = normalLight.GetComponent<Light>().color;
-            meshRenderer.material = white;
+            // meshRenderer.material = white;
+            for(int i=0; i<=5; i++)
+            {
+                streetLight[i].GetComponent<Light>().color = normalLight.GetComponent<Light>().color;
+            }
         }
         else
         {
             lightshake.color = Color.red;
-            meshRenderer.material = red;
+            // meshRenderer.material = red;
+            for(int i=0; i<=5; i++)
+            {
+                streetLight[i].GetComponent<Light>().color = Color.red;
+            }
         }
     }
 }

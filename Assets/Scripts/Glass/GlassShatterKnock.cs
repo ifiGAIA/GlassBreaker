@@ -35,7 +35,7 @@ public class GlassShatterKnock : MonoBehaviour
 
                 Glass.spotisexist=false;
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
         }
@@ -48,7 +48,7 @@ public class GlassShatterKnock : MonoBehaviour
 
                 Glass.spotisexist=false;
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
@@ -58,7 +58,7 @@ public class GlassShatterKnock : MonoBehaviour
 
                 Glass.spotisexist=false;
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
         }
@@ -71,7 +71,7 @@ public class GlassShatterKnock : MonoBehaviour
 
                 Glass.spotisexist=false;
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
             else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
@@ -81,7 +81,7 @@ public class GlassShatterKnock : MonoBehaviour
                 
                 Glass.spotisexist=false;
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
         }
@@ -94,7 +94,7 @@ public class GlassShatterKnock : MonoBehaviour
 
                 Glass.spotisexist=false;
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green")
@@ -104,7 +104,7 @@ public class GlassShatterKnock : MonoBehaviour
 
                 Glass.spotisexist=false;
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
             else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
@@ -114,7 +114,7 @@ public class GlassShatterKnock : MonoBehaviour
                 
                 Glass.spotisexist=false;
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
         }

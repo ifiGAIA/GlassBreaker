@@ -43,7 +43,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
@@ -60,7 +60,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
@@ -74,7 +74,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
@@ -91,7 +91,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
@@ -105,7 +105,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
@@ -122,7 +122,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
@@ -136,7 +136,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
@@ -150,7 +150,7 @@ public class knockSpot : MonoBehaviour
                 // Glass.spotisexist=false;
                 knockSpotManager.KnockSpot();
                 Glass.KnockCount();
-
+                other.gameObject.tag = "Untagged";
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);

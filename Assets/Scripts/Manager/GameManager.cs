@@ -12,6 +12,7 @@ public class GameManager : Singleton<GameManager>
     public GameDegreeOfDifficulty gameDegreeOfDifficulty;
     public bool leftFoot;
     public bool rightFoot;
+    public bool Foot;
 
     protected override void Awake()
     {
