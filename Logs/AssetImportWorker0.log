@@ -1,0 +1,436 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.21f1 (a38c86f6690f) revision 10718342'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19043.1348; Version 2009; 64bit' Language: 'zh' Physical Memory: 32722 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.21f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/user/Desktop/GlassBreaker/GlassBreaker
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+11136
+Successfully changed project path to: C:/Users/user/Desktop/GlassBreaker/GlassBreaker
+C:/Users/user/Desktop/GlassBreaker/GlassBreaker
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 88.14 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 1.10 ms.
+Initialize engine version: 2020.3.21f1 (a38c86f6690f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/user/Desktop/GlassBreaker/GlassBreaker/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   
+    VRAM:     8079 MB
+    Driver:   26.21.14.4614
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56760
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.21f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003112 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 64.46 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.192 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1192ms)
+		BeginReloadAssembly (120ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (422ms)
+			LoadAssemblies (120ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (137ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (165ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (65ms)
+				BeforeProcessingInitializeOnLoad (11ms)
+				ProcessInitializeOnLoadAttributes (63ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.017765 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 65.36 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+[XR] OculusXRPlugin: registering subsystems
+[XR] Unable to register display lifecyle provider: [1]
+[XR] Oculus Input lifecycle provider registered.
+[XR] Unable to register input lifecyle provider: [1]
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\user\Desktop\GlassBreaker\GlassBreaker\Library\PackageCache\com.unity.xr.oculus@1.10.0\Runtime\OculusLoader.cs:250 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\user\Desktop\GlassBreaker\GlassBreaker\Library\PackageCache\com.unity.xr.oculus@1.10.0\Runtime\OculusLoader.cs:235 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00032] in <695d1cc93cca45069c528c15c9fdd749>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00048] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x00047] in <208f92fc783546f9abbe643bfc23920c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.222 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1223ms)
+		BeginReloadAssembly (197ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (966ms)
+			LoadAssemblies (190ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (321ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (357ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (66ms)
+				BeforeProcessingInitializeOnLoad (86ms)
+				ProcessInitializeOnLoadAttributes (174ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.84 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.09 ms.
+Unloading 3191 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 149.9 MB.
+System memory in use after: 150.1 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3635.
+Total: 3.896800 ms (FindLiveObjects: 0.396200 ms CreateObjectMapping: 0.200300 ms MarkObjects: 3.214800 ms  DeleteObjects: 0.084300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Low Poly Boxing LITE/Prefabs/Main Camera.prefab
+  artifactKey: Guid(0fd509e3e23747346abb416e48a9fd4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Prefabs/Main Camera.prefab using Guid(0fd509e3e23747346abb416e48a9fd4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a5a6b30ea6a3d97cf359d0779aa3d0b') in 0.058957 seconds 
+  Import took 0.063972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Low Poly Boxing LITE/Prefabs
+  artifactKey: Guid(1cde1c60d15f1fb43836ac6277703a0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Prefabs using Guid(1cde1c60d15f1fb43836ac6277703a0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c6c6d19a5ea3d1b03ba14458edc9bd') in 0.007442 seconds 
+  Import took 0.011867 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Low Poly Boxing LITE/Prefabs/Support4InteractiveSmallBag.prefab
+  artifactKey: Guid(f1e4b09c8935a0c4dadd1a6be7954c9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Prefabs/Support4InteractiveSmallBag.prefab using Guid(f1e4b09c8935a0c4dadd1a6be7954c9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f52586d3c2f53bbd995c0f4f0c136ac') in 0.207247 seconds 
+  Import took 0.212153 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Low Poly Boxing LITE/Prefabs/Support4InteractiveBag.prefab
+  artifactKey: Guid(e08e2dbd0dc592a4b97a50544c3ca41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Prefabs/Support4InteractiveBag.prefab using Guid(e08e2dbd0dc592a4b97a50544c3ca41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e22a0510f9f79ddf85a572950daff77') in 0.024374 seconds 
+  Import took 0.029525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Low Poly Boxing LITE/Prefabs/BoxMan_A.prefab
+  artifactKey: Guid(d54715e4d36911949a85ee025b487887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Prefabs/BoxMan_A.prefab using Guid(d54715e4d36911949a85ee025b487887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da35dced6dbb4ffb35201d3b35fc8546') in 0.040079 seconds 
+  Import took 0.045081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.354579 seconds.
+  path: Assets/Low Poly Boxing LITE/Mesh
+  artifactKey: Guid(065263899b4ba474aa1a8324303f6075) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Mesh using Guid(065263899b4ba474aa1a8324303f6075) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d87fbe6ed2d483a260555b8452a9570') in 0.008774 seconds 
+  Import took 0.013232 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.054914 seconds.
+  path: Assets/Low Poly Boxing LITE/Mesh/BagPera_T.fbx
+  artifactKey: Guid(93b49d5e2f417b1419e8c1e45884b49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Mesh/BagPera_T.fbx using Guid(93b49d5e2f417b1419e8c1e45884b49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13486a26918e8e28236b4a52827932f2') in 0.129118 seconds 
+  Import took 0.133831 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Low Poly Boxing LITE/Mesh/BoxMan_A.fbx
+  artifactKey: Guid(221081c473b69b94a902942892ab1890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Mesh/BoxMan_A.fbx using Guid(221081c473b69b94a902942892ab1890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '003e337008c61c5bb1d7d309c011290d') in 0.036511 seconds 
+  Import took 0.040863 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Low Poly Boxing LITE/Mesh/FloorWall.fbx
+  artifactKey: Guid(caf75f6537b07154980aaf49df2846a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Mesh/FloorWall.fbx using Guid(caf75f6537b07154980aaf49df2846a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09ad156e04180f543f7a673768244bf7') in 0.035284 seconds 
+  Import took 0.040183 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 42.268735 seconds.
+  path: Assets/Low Poly Boxing LITE/Materials
+  artifactKey: Guid(6690be346b65a4c4ab588fd6bc9c3e88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Materials using Guid(6690be346b65a4c4ab588fd6bc9c3e88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79c8e0ed588ae04b1ed54a83a967b748') in 0.008782 seconds 
+  Import took 0.013465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.383070 seconds.
+  path: Assets/Low Poly Boxing LITE/Animations
+  artifactKey: Guid(a0a1df86c0772b14997a6f84a1b2776f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Animations using Guid(a0a1df86c0772b14997a6f84a1b2776f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '577c34bc17dba36e17bfe4eb175e44f9') in 0.008981 seconds 
+  Import took 0.013332 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.033294 seconds.
+  path: Assets/Low Poly Boxing LITE/Animations/combo_punch.fbx
+  artifactKey: Guid(8e0dff8be5bec094b936ac70ee56156b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Animations/combo_punch.fbx using Guid(8e0dff8be5bec094b936ac70ee56156b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc29074f49113e33a52350f9a4e3271f') in 0.014703 seconds 
+  Import took 0.019324 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.790676 seconds.
+  path: Assets/Low Poly Boxing LITE/Postprocessing
+  artifactKey: Guid(372355a05b6b1ac4e80e9187961932fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Postprocessing using Guid(372355a05b6b1ac4e80e9187961932fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5908eb8a81bd8ae4fd91e271d354c8c') in 0.008840 seconds 
+  Import took 0.013303 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.078334 seconds.
+  path: Assets/Low Poly Boxing LITE/Postprocessing/Post-Processing Profile.asset
+  artifactKey: Guid(057be71840507874689f6818f7c70302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Postprocessing/Post-Processing Profile.asset using Guid(057be71840507874689f6818f7c70302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f59d4e3df3bf5ca26478692c93fb3fc7') in 0.011580 seconds 
+  Import took 0.016317 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.211032 seconds.
+  path: Assets/Low Poly Boxing LITE/Textures
+  artifactKey: Guid(cc46471dd06ded541b29907f9e091339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Textures using Guid(cc46471dd06ded541b29907f9e091339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd3b3f1da6d07961088334010ec7e8ea') in 0.008537 seconds 
+  Import took 0.013117 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.064673 seconds.
+  path: Assets/Low Poly Boxing LITE/Textures/BagPera_R.png
+  artifactKey: Guid(5c53569336b989c40b157ecc4cea2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Textures/BagPera_R.png using Guid(5c53569336b989c40b157ecc4cea2cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39da7ec90c145ee0779887b1017d66a6') in 0.032051 seconds 
+  Import took 0.036470 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Low Poly Boxing LITE/Textures/computer-mouse-buttons.png
+  artifactKey: Guid(8892741a9ff73004f8e47a4d4c42c0b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Textures/computer-mouse-buttons.png using Guid(8892741a9ff73004f8e47a4d4c42c0b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e8a02e4b26996e005b44ae558d7a126') in 0.033425 seconds 
+  Import took 0.037642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Low Poly Boxing LITE/Textures/BrickTexture.png
+  artifactKey: Guid(4a443a3a115ec434c9771cced3ce5f6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Textures/BrickTexture.png using Guid(4a443a3a115ec434c9771cced3ce5f6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2429d295bb2d5b6f3b9e6baa8b50ca1e') in 0.018228 seconds 
+  Import took 0.022276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Low Poly Boxing LITE/Textures/BoxMan_3.jpg
+  artifactKey: Guid(f353de45ec0759542bb0cfc946022060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Textures/BoxMan_3.jpg using Guid(f353de45ec0759542bb0cfc946022060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be5e7802681c7ce5301107916f14d3b7') in 0.019161 seconds 
+  Import took 0.023394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Low Poly Boxing LITE/Textures/WoodTexture.png
+  artifactKey: Guid(40beb1e59265d1d41b2449f7ef7c8568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/Textures/WoodTexture.png using Guid(40beb1e59265d1d41b2449f7ef7c8568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '932181f9760d8d8a60dfdc6269a12753') in 0.016951 seconds 
+  Import took 0.021217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.220841 seconds.
+  path: Assets/Low Poly Boxing LITE/TutorialInfo
+  artifactKey: Guid(4c9a4e11a99b5e44bba6a396926e2d78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/TutorialInfo using Guid(4c9a4e11a99b5e44bba6a396926e2d78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '365aa404aa4dad7307c06b44ed3c5d28') in 0.009232 seconds 
+  Import took 0.014177 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.032452 seconds.
+  path: Assets/Low Poly Boxing LITE/TutorialInfo/Resources
+  artifactKey: Guid(25dd5e7c6765e274ca836fd43da26474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/TutorialInfo/Resources using Guid(25dd5e7c6765e274ca836fd43da26474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d26868f37f3e9d30de20d43a06504f5') in 0.008315 seconds 
+  Import took 0.012647 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.075129 seconds.
+  path: Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small.jpg
+  artifactKey: Guid(c9aa6b8db6a707d47b3dc9f5d8198753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small.jpg using Guid(c9aa6b8db6a707d47b3dc9f5d8198753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c68f60a82652404e069fabcc0ae55597') in 0.020986 seconds 
+  Import took 0.025385 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small4.jpg
+  artifactKey: Guid(fa9a602c7b15dbf4495f8fbafa2ea6b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small4.jpg using Guid(fa9a602c7b15dbf4495f8fbafa2ea6b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e26270c102c122be27a1aaec23c298f2') in 0.020605 seconds 
+  Import took 0.024839 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small1.jpg
+  artifactKey: Guid(107e8030e7b339e4a855bad327a91f9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small1.jpg using Guid(107e8030e7b339e4a855bad327a91f9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1260d1af6fda3fc88b33242b95fcd9e2') in 0.021275 seconds 
+  Import took 0.025525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small2.png
+  artifactKey: Guid(2db9add5d14547b449f586201e82c021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small2.png using Guid(2db9add5d14547b449f586201e82c021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '245586a929cd85b52b03f627f84bcf02') in 0.020280 seconds 
+  Import took 0.024420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small3.jpg
+  artifactKey: Guid(87d480ad2278b8149b7ea7ee17b800a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Low Poly Boxing LITE/TutorialInfo/Resources/Small3.jpg using Guid(87d480ad2278b8149b7ea7ee17b800a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e6a4c87fb506f97a415805aef75426e') in 0.021436 seconds 
+  Import took 0.025470 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.014053 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.10 ms.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\user\Desktop\GlassBreaker\GlassBreaker\Library\PackageCache\com.unity.xr.oculus@1.10.0\Runtime\OculusLoader.cs:250 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\user\Desktop\GlassBreaker\GlassBreaker\Library\PackageCache\com.unity.xr.oculus@1.10.0\Runtime\OculusLoader.cs:235 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00032] in <695d1cc93cca45069c528c15c9fdd749>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00048] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x00047] in <208f92fc783546f9abbe643bfc23920c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.102 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1103ms)
+		BeginReloadAssembly (167ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (878ms)
+			LoadAssemblies (149ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (313ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (299ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (106ms)
+				ProcessInitializeOnLoadAttributes (162ms)
+				ProcessInitializeOnLoadMethodAttributes (17ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.86 ms, found 8 plugins.
+Preloading 1 native plugins for Editor in 0.09 ms.
+Unloading 3044 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 159.5 MB.
+System memory in use after: 159.8 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 3696.
+Total: 3.320400 ms (FindLiveObjects: 0.283100 ms CreateObjectMapping: 0.146900 ms MarkObjects: 2.843600 ms  DeleteObjects: 0.045900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
