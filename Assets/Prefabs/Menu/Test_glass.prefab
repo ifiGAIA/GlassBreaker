@@ -41269,6 +41269,7 @@ MonoBehaviour:
   glassbroken: {fileID: 8300000, guid: c7d89b449b523f94d8fa0989b2823c29, type: 3}
   glassshatter: {fileID: 8300000, guid: f666a4d7c36e4b146b08ae0ad8108d7c, type: 3}
   gameStart: 0
+  crack: {fileID: 6352884176683165181}
   glassPos: {fileID: 0}
   knock_Position: {fileID: 8413648593146836670}
   Objects:
@@ -41279,6 +41280,7 @@ MonoBehaviour:
   spotisexist: 0
   canMove: 0
   knockcount: 0
+  reload: 0
 --- !u!82 &3812247765204581181
 AudioSource:
   m_ObjectHideFlags: 0

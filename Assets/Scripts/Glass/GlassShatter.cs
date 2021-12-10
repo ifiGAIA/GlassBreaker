@@ -13,6 +13,8 @@ public class GlassShatter : MonoBehaviour
     AudioSource audioSource;
     public bool gameStart;
 
+    public GameObject crack;
+    private GameObject knockspot;
     public GameObject glassPos;
     public GameObject knock_Position;
     public GameObject[] Objects;
@@ -20,6 +22,7 @@ public class GlassShatter : MonoBehaviour
     public bool spotisexist = false;
     public bool canMove = false;
     public int knockcount = 0;
+    public bool reload;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,13 @@ public class GlassShatter : MonoBehaviour
     {
         GlasscanKnock();
         GlassSwitch();
+        GlassBroken();
+        if(gotoGame1.glassreload)
+        {
+            GlassReload();
+            gotoGame1.glassreload = false;
+            Debug.Log("gotoGame1.glassreload");
+        }
     }
     void GlassSwitch()
     {
@@ -65,8 +75,19 @@ public class GlassShatter : MonoBehaviour
             boxCollider.enabled = false;
             explosionGlass.SetActive(true);
             canMove = false;
-            Invoke("DestroyGlass",5f);
+            Invoke("DestroyGlass",2f);
         }
+    }
+    public void GlassReload()
+    {
+        // canMove = true;
+        // gotoGame1.glassisbroken = true;
+        // gameObject.tag = "Untagged";
+        // crack.gameObject.tag = "Untagged";
+        // crack.SetActive(false);
+        gotoGame1.glasscount = 0;
+        Destroy(gameObject);
+        // gotoGame1.canKnockglass = true;
     }
     void DestroyGlass()
     {
@@ -91,6 +112,10 @@ public class GlassShatter : MonoBehaviour
         {
             canMove = true;
             gotoGame1.glassisbroken = true;
+            gameObject.tag = "Untagged";
+            crack.gameObject.tag = "Untagged";
+            crack.SetActive(false);
+            gotoGame1.GlassCount();
         }
     }
     void KnockSpot_game1()
@@ -100,8 +125,10 @@ public class GlassShatter : MonoBehaviour
         if(spotisexist == false && knockcount<5 && canKnock == true)
         {
             Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.8f,1.8f),0.8775f);
-            Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+            knockspot = Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+            knockspot.transform.parent = knock_Position.transform;
             spotisexist =true;
+            Debug.Log("RR");
         }
     }
     void KnockSpot_game2()
@@ -111,9 +138,10 @@ public class GlassShatter : MonoBehaviour
         if(spotisexist == false && knockcount<5 && canKnock == true)
         {
             Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.8f,1.8f),0.8775f);
-            Debug.Log(Random_Objects);
-            Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+            knockspot = Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+            knockspot.transform.parent = knock_Position.transform;
             spotisexist =true;
+            Debug.Log("RG");
         }
     }
     void KnockSpot_game3()
@@ -125,15 +153,18 @@ public class GlassShatter : MonoBehaviour
             if(Random_Objects == 0 || Random_Objects == 1)
             {
                 Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.8f,1.8f),0.8775f);
-                Instantiate(Objects[0], rnadomPos,knock_Position.transform.rotation);
+                knockspot = Instantiate(Objects[0], rnadomPos,knock_Position.transform.rotation);
+                knockspot.transform.parent = knock_Position.transform;
                 spotisexist =true;
             }
             else if(Random_Objects == 2)
             {
                 Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.3f,0.45f),0.8775f);
-                Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+                knockspot = Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+                knockspot.transform.parent = knock_Position.transform;
                 spotisexist =true;
             }
+            Debug.Log("RRf");
         }
     }
     void KnockSpot_game4()
@@ -145,15 +176,18 @@ public class GlassShatter : MonoBehaviour
             if(Random_Objects == 0 || Random_Objects == 1)
             {
                 Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.8f,1.8f),0.8775f);
-                Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+                knockspot = Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+                knockspot.transform.parent = knock_Position.transform;
                 spotisexist =true;
             }
             else if(Random_Objects == 2)
             {
                 Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.3f,0.45f),0.8775f);
-                Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+                knockspot = Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
+                knockspot.transform.parent = knock_Position.transform;
                 spotisexist =true;
             }
+            Debug.Log("RGf");
         }
     }
 }
