@@ -8,7 +8,6 @@ public class Host : MonoBehaviour
     public AudioClip gameStart;
     public AudioClip MiddleSound;
     AudioSource audioSource;
-    private bool gamestart;
     public bool middle;
     // Start is called before the first frame update
     void Start()
