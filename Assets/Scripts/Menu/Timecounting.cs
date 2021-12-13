@@ -16,6 +16,16 @@ public class Timecounting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
+        {
+            timer_F = 60;
+            GetComponent<Text>().text = "秒數 : 60";
+        }
+        else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
+        {
+            timer_F = 80;
+            GetComponent<Text>().text = "秒數 : 80";
+        }
         gamestart = false;
         timer_f = timer_F;
         timer_i = timer_I;
@@ -33,7 +43,7 @@ public class Timecounting : MonoBehaviour
         }
         if(second == 0)
         {
-            ReTime();
+            // ReTime();
         }
         if(Input.GetKeyDown(KeyCode.A))
         {
@@ -67,12 +77,19 @@ public class Timecounting : MonoBehaviour
         gamestart = false;
         timer_f = timer_F;
         timer_i = timer_I;
-        GetComponent<Text>().text = "秒數 : 60";
+        if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
+        {
+            GetComponent<Text>().text = "秒數 : 60";
+        }
+        else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
+        {
+            GetComponent<Text>().text = "秒數 : 80";
+        }
     }
     
     void turn_time() 
     {
-        minute = timer_i / 70;
-        second = timer_i %70;
+        minute = timer_i / 80;
+        second = timer_i % 80;
     }
 }

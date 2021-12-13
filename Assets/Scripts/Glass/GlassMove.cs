@@ -164,6 +164,10 @@ public class GlassMove : MonoBehaviour
                 timesUp = true;
                 glasscount = 0;
             }
+            else
+            {
+                timesUp = false;
+            }
             if(timecounting.gamestart == true)
             {
                 glassaudio = false;
@@ -228,8 +232,8 @@ public class GlassMove : MonoBehaviour
             if(gameLevel == GameLevel.Game1)
             {
                 gameLevel = GameLevel.Game2;
-                glassInstantiate.GlassReborn();
                 timecounting.ReTime();
+                glassInstantiate.GlassReborn();
                 scoreboard.glasscount = 0;
             }
             else if(gameLevel == GameLevel.Game2)
@@ -242,8 +246,8 @@ public class GlassMove : MonoBehaviour
             if(gameLevel == GameLevel.Game3)
             {
                 gameLevel = GameLevel.Game4;
-                glassInstantiate.GlassReborn();
                 timecounting.ReTime();
+                glassInstantiate.GlassReborn();
                 scoreboard.glasscount = 0;
             }
             else if(gameLevel == GameLevel.Game4)

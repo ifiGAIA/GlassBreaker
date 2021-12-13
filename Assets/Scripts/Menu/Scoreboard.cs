@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class Scoreboard : MonoBehaviour
 {
     public GlassMove glassMove;
-    public GameObject Time;
+    public GameObject timecounting;
     public int numberofbrokenglass1;
     public int numberofbrokenglass2;
     public int time1;
     public int time2;
-    private int finalscore;
+    public int finalscore;
     public int glasscount = 0;
     public AudioClip gameover;
     AudioSource audioSource;
@@ -24,7 +24,7 @@ public class Scoreboard : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()//&& timecounting.GetComponent<Timecounting>().gamestart == true
     {
         if(glassMove.gameLevel == GameLevel.Game1)
         {
@@ -53,7 +53,7 @@ public class Scoreboard : MonoBehaviour
     }
     void Scoring_Game1()
     {
-        time1 = 60 - Time.GetComponent<Timecounting>().second;
+        time1 = 60 - timecounting.GetComponent<Timecounting>().second;
         // score1 = glasscount * 10;
         if (glasscount < 10)
         {
@@ -67,7 +67,7 @@ public class Scoreboard : MonoBehaviour
     }
     void Scoring_Game2()
     {
-        time2 = 60 - Time.GetComponent<Timecounting>().second;
+        time2 = 60 - timecounting.GetComponent<Timecounting>().second;
         // score2 = glasscount * 10;
         if (glasscount < 10)
         {
@@ -81,7 +81,7 @@ public class Scoreboard : MonoBehaviour
     }
     void Scoring_Game3()
     {
-        time1 = 60 - Time.GetComponent<Timecounting>().second;
+        time1 = 80 - timecounting.GetComponent<Timecounting>().second;
         // score1 = glasscount * 10;
         if (glasscount < 10)
         {
@@ -95,7 +95,7 @@ public class Scoreboard : MonoBehaviour
     }
     void Scoring_Game4()
     {
-        time2 = 60 - Time.GetComponent<Timecounting>().second;
+        time2 = 80 - timecounting.GetComponent<Timecounting>().second;
         // score2 = glasscount * 10;
         if (glasscount < 10)
         {
@@ -114,8 +114,8 @@ public class Scoreboard : MonoBehaviour
             finalscore = time1 + time2;
             GetComponent<Text>().fontSize = 100;
             GetComponent<Text>().text = "擊碎玻璃總數 : " + (numberofbrokenglass1+numberofbrokenglass2);
-            Time.GetComponent<Text>().fontSize = 150;
-            Time.GetComponent<Text>().text = "總秒數 : " + finalscore;
+            timecounting.GetComponent<Text>().fontSize = 150;
+            timecounting.GetComponent<Text>().text = "總秒數 : " + finalscore;
             if(gameOver == false)
             {
                 audioSource.PlayOneShot(gameover);
@@ -127,8 +127,8 @@ public class Scoreboard : MonoBehaviour
             finalscore = time1 + time2;
             GetComponent<Text>().fontSize = 100;
             GetComponent<Text>().text = "擊碎玻璃總數 : " + (numberofbrokenglass1+numberofbrokenglass2);
-            Time.GetComponent<Text>().fontSize = 150;
-            Time.GetComponent<Text>().text = "總秒數 : " + finalscore;
+            timecounting.GetComponent<Text>().fontSize = 150;
+            timecounting.GetComponent<Text>().text = "總秒數 : " + finalscore;
             if(gameOver == false)
             {
                 audioSource.PlayOneShot(gameover);
