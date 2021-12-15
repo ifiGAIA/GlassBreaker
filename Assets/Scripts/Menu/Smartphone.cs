@@ -19,7 +19,8 @@ public class Smartphone : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
         audioSource = GetComponent<AudioSource>();
         Ring = Phone.GetComponent<AudioSource>();
-        Invoke("GameStart",2f);
+        // Invoke("GameStart",2f);
+        phone.SetActive(false);
         call.SetActive(false);
         // material2 = GetComponent<MeshRenderer>().materials[2];
     }
@@ -37,6 +38,7 @@ public class Smartphone : MonoBehaviour
     void GameStart()
     {
         meshRenderer.enabled = false;
+        phone.SetActive(true);
         Ring.Play();
     }
     void PhoneCall()

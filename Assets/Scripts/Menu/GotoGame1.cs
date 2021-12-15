@@ -15,6 +15,8 @@ public class GotoGame1 : MonoBehaviour
     public GlassChoose glassChoose;
     public GameObject hammer_Left;
     public GameObject hammer_Right;
+    public GameObject Phone;
+    public GameObject Handler;
     public bool glassred;
     public bool glassgreen;
     public bool glasspurple;
@@ -47,8 +49,19 @@ public class GotoGame1 : MonoBehaviour
             }
         }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "Grabbable")
+        {
+            Invoke("ToGame",2f);
+        }
+    }
     void ToGame()
     {
+        Destroy(hammer_Left);
+        Destroy(hammer_Right);
+        Destroy(Phone);
+        Destroy(Handler);
         SceneManager.LoadScene("TestScenes");
     }
     public void ChooseGlass_RR()
@@ -95,18 +108,10 @@ public class GotoGame1 : MonoBehaviour
     {
         if(glassChoose == GlassChoose.RR || glassChoose == GlassChoose.RRf)
         {
-            // Lefthand_game1.SetActive(true);
-            // Righthand_game1.SetActive(true);
-            // Lefthand_game2.SetActive(false);
-            // Righthand_game2.SetActive(false);
             hammer_Right.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.red;
         }
         else
         {
-            // Lefthand_game1.SetActive(false);
-            // Righthand_game1.SetActive(false);
-            // Lefthand_game2.SetActive(true);
-            // Righthand_game2.SetActive(true);
             hammer_Right.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.green;
         }
     }

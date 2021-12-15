@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GlassInstantiate : MonoBehaviour
 {
+    public GameObject Player;
     public Transform InitPos;
     public GameObject Prefab;
     private GameObject glass;
@@ -13,6 +14,8 @@ public class GlassInstantiate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Player.transform.position = new Vector3(0,0,0);
         // Glassinstantiate();
         gamestart = true;
     }

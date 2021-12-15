@@ -80,14 +80,8 @@ public class GlassShatter : MonoBehaviour
     }
     public void GlassReload()
     {
-        // canMove = true;
-        // gotoGame1.glassisbroken = true;
-        // gameObject.tag = "Untagged";
-        // crack.gameObject.tag = "Untagged";
-        // crack.SetActive(false);
         gotoGame1.glasscount = 0;
         Destroy(gameObject);
-        // gotoGame1.canKnockglass = true;
     }
     void DestroyGlass()
     {
