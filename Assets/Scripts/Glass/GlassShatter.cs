@@ -151,7 +151,7 @@ public class GlassShatter : MonoBehaviour
                 knockspot.transform.parent = knock_Position.transform;
                 spotisexist =true;
             }
-            else if(Random_Objects == 2)
+            else if(Random_Objects == 2 || Random_Objects == 3)
             {
                 Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.3f,0.45f),0.8775f);
                 knockspot = Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);
@@ -174,7 +174,7 @@ public class GlassShatter : MonoBehaviour
                 knockspot.transform.parent = knock_Position.transform;
                 spotisexist =true;
             }
-            else if(Random_Objects == 2)
+            else if(Random_Objects == 2 || Random_Objects == 3)
             {
                 Vector3 rnadomPos = new Vector3(Random.Range(-0.45f,0.45f),Random.Range(0.3f,0.45f),0.8775f);
                 knockspot = Instantiate(Objects[Random_Objects], rnadomPos,knock_Position.transform.rotation);

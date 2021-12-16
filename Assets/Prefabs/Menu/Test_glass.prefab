@@ -41276,6 +41276,7 @@ MonoBehaviour:
   - {fileID: 1492543208851373025, guid: e3f5823e341fa1e489ac63e8124a50be, type: 3}
   - {fileID: 1492543208851373025, guid: 2d17d0306fd5e3e4b876e1813c570277, type: 3}
   - {fileID: 1492543208851373025, guid: 3fccb8dbf4ed2a54cab26cc1df55da9f, type: 3}
+  - {fileID: 1492543208851373025, guid: 3fccb8dbf4ed2a54cab26cc1df55da9f, type: 3}
   canKnock: 0
   spotisexist: 0
   canMove: 0
