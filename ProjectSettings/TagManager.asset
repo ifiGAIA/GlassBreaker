@@ -16,6 +16,8 @@ TagManager:
   - foot
   - move
   - yellow
+  - Left_foot
+  - Right_foot
   layers:
   - Default
   - TransparentFX

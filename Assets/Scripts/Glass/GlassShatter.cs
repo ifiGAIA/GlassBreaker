@@ -158,7 +158,7 @@ public class GlassShatter : MonoBehaviour
                 knockspot.transform.parent = knock_Position.transform;
                 spotisexist =true;
             }
-            Debug.Log("RRf");
+            Debug.Log(Random_Objects);
         }
     }
     void KnockSpot_game4()
@@ -181,7 +181,7 @@ public class GlassShatter : MonoBehaviour
                 knockspot.transform.parent = knock_Position.transform;
                 spotisexist =true;
             }
-            Debug.Log("RGf");
+            Debug.Log(Random_Objects);
         }
     }
 }

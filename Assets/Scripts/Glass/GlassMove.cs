@@ -85,14 +85,9 @@ public class GlassMove : MonoBehaviour
     }
     void ChooseFootHammer()
     {
-        if(GameManager.Instance.leftFoot == true)
+        if(GameManager.Instance.Foot == true)
         {
             Leftfoot.SetActive(true);
-            Rightfoot.SetActive(false);
-        }
-        else if(GameManager.Instance.rightFoot == true)
-        {
-            Leftfoot.SetActive(false);
             Rightfoot.SetActive(true);
         }
         else

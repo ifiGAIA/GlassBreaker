@@ -47,7 +47,6 @@ public class knockSpot : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
-                // Debug.Log("紅色");
             }
         }
         else if(glassMove.gameLevel == GameLevel.Game2)
@@ -64,7 +63,6 @@ public class knockSpot : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
-                // Debug.Log("紅色");
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green" && glassMove.timecounting.gamestart == true)
             {
@@ -78,7 +76,6 @@ public class knockSpot : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
-                // Debug.Log("綠色");
             }
         }
         else if(glassMove.gameLevel == GameLevel.Game3)
@@ -95,9 +92,8 @@ public class knockSpot : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
-                // Debug.Log("紅色");
             }
-            else if(other.gameObject.tag == "foot" && gameObject.tag == "purple" && glassMove.timecounting.gamestart == true)
+            else if(other.gameObject.tag == "Left_foot" && gameObject.tag == "purple" && glassMove.timecounting.gamestart == true)
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -109,7 +105,19 @@ public class knockSpot : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
-                // Debug.Log("紫色");
+            }
+            else if(other.gameObject.tag == "Right_foot" && gameObject.tag == "yellow" && glassMove.timecounting.gamestart == true)
+            {
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack.transform.parent = Glasscrack;
+                
+                // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
+                Glass.KnockCount();
+                other.gameObject.tag = "Untagged";
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
             }
         }
         else if(glassMove.gameLevel == GameLevel.Game4)
@@ -126,7 +134,6 @@ public class knockSpot : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
-                // Debug.Log("紅色");
             }
             else if(other.gameObject.tag == "Right_hammer" && gameObject.tag == "green" && glassMove.timecounting.gamestart == true)
             {
@@ -140,9 +147,8 @@ public class knockSpot : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
-                // Debug.Log("綠色");
             }
-            else if(other.gameObject.tag == "foot" && gameObject.tag == "purple" && glassMove.timecounting.gamestart == true)
+            else if(other.gameObject.tag == "Left_foot" && gameObject.tag == "purple" && glassMove.timecounting.gamestart == true)
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -154,7 +160,19 @@ public class knockSpot : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().enabled = false;
                 gameObject.GetComponentInChildren<Light>().enabled = false;
                 // Destroy(gameObject);
-                // Debug.Log("紫色");
+            }
+            else if(other.gameObject.tag == "Right_foot" && gameObject.tag == "yellow" && glassMove.timecounting.gamestart == true)
+            {
+                crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
+                crack.transform.parent = Glasscrack;
+                
+                // Glass.spotisexist=false;
+                knockSpotManager.KnockSpot();
+                Glass.KnockCount();
+                other.gameObject.tag = "Untagged";
+                gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                gameObject.GetComponentInChildren<Light>().enabled = false;
+                // Destroy(gameObject);
             }
         }
     }

@@ -34,6 +34,14 @@ public class GotoGame1 : MonoBehaviour
     {
         canKnockglass = false;
         glassisbroken = true;
+        if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
+        {
+            GameManager.Instance.Foot = false;
+        }
+        else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
+        {
+            GameManager.Instance.Foot = true;
+        }
     }
 
     // Update is called once per frame

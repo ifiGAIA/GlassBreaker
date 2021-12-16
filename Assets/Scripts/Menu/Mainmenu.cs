@@ -32,6 +32,8 @@ public class Mainmenu : MonoBehaviour
             Chooseglass[1].SetActive(false);
             Chooseglass[2].SetActive(true);
             Chooseglass[3].SetActive(true);
+            Leftfoot.SetActive(true);
+            Rightfoot.SetActive(true);
         }
         else
         {
@@ -39,6 +41,8 @@ public class Mainmenu : MonoBehaviour
             Chooseglass[1].SetActive(true);
             Chooseglass[2].SetActive(false);
             Chooseglass[3].SetActive(false);
+            Leftfoot.SetActive(false);
+            Rightfoot.SetActive(false);
         }
     }
 

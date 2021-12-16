@@ -27,5 +27,13 @@ public class HammerManager : MonoBehaviour
         {
             gameObject.tag = "Right_hammer";
         }
+        else if(other.gameObject.name == "CanKnock" && gameObject.name == "boots_Left")
+        {
+            gameObject.tag = "Left_foot";
+        }
+        else if(other.gameObject.name == "CanKnock" && gameObject.name == "boots_Right")
+        {
+            gameObject.tag = "Right_foot";
+        }
     }    
 }

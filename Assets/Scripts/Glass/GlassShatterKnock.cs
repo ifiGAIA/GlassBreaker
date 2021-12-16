@@ -74,7 +74,7 @@ public class GlassShatterKnock : MonoBehaviour
                 other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
-            else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
+            else if(other.gameObject.tag == "Left_foot" && gameObject.tag == "purple")
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -84,7 +84,7 @@ public class GlassShatterKnock : MonoBehaviour
                 other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
-            else if(other.gameObject.tag == "foot" && gameObject.tag == "yellow")
+            else if(other.gameObject.tag == "Right_foot" && gameObject.tag == "yellow")
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -117,7 +117,7 @@ public class GlassShatterKnock : MonoBehaviour
                 other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
-            else if(other.gameObject.tag == "foot" && gameObject.tag == "purple")
+            else if(other.gameObject.tag == "Left_foot" && gameObject.tag == "purple")
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
@@ -127,7 +127,7 @@ public class GlassShatterKnock : MonoBehaviour
                 other.gameObject.tag = "Untagged";
                 Destroy(gameObject);
             }
-            else if(other.gameObject.tag == "foot" && gameObject.tag == "yellow")
+            else if(other.gameObject.tag == "Right_foot" && gameObject.tag == "yellow")
             {
                 crack = Instantiate(Objects[Random_Objects], new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,0.964f),Quaternion.Euler(0f,0.0f,0.0f));
                 crack.transform.parent = Glasscrack;
