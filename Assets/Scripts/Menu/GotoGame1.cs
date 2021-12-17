@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum GlassChoose
 {
@@ -17,12 +18,19 @@ public class GotoGame1 : MonoBehaviour
     public GameObject hammer_Right;
     public GameObject Phone;
     public GameObject Handler;
+    public GameObject Teleport;
+
+    public GameObject Signcanvas2;
+    private float i;
+    public float fadspeed = 0.1f;
+
     public bool glassred;
     public bool glassgreen;
     public bool glasspurple;
     public bool glassfinish;
     public int glasscount;
     public bool glassreload;
+    public int practicecount;
 
     //生成玻璃
     public Transform InitPos;
@@ -42,6 +50,8 @@ public class GotoGame1 : MonoBehaviour
         {
             GameManager.Instance.Foot = true;
         }
+        // Teleport.SetActive(false);
+        Signcanvas2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,6 +66,26 @@ public class GotoGame1 : MonoBehaviour
                 Glassinstantiate();
             }
         }
+    }
+    void PracticeisDone()
+    {
+        practicecount += 1;
+        if(practicecount == 2)
+        {
+            Teleport.SetActive(true);
+            Signcanvas2.SetActive(true);
+            // Invoke("Fade", 15f);
+        }
+    }
+    void Fade()
+    {
+        i -= fadspeed*Time.deltaTime;
+        if(i<=0)
+        {
+            i=0;
+        }
+        Signcanvas2.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, i);
+        Signcanvas2.transform.GetChild(1).GetComponent<Text>().color = new Color(1, 1, 1, i);
     }
     void OnTriggerEnter(Collider other)
     {
@@ -129,6 +159,7 @@ public class GotoGame1 : MonoBehaviour
         if(glasscount == 3)
         {
             canKnockglass = false;
+            PracticeisDone();
             glasscount = 0;
         }
     }
