@@ -91,7 +91,8 @@ public class GotoGame1 : MonoBehaviour
     {
         if(other.gameObject.name == "Grabbable")
         {
-            Invoke("ToGame",2f);
+            // Invoke("ToGame",2f);
+            ToGame();
         }
     }
     void ToGame()
