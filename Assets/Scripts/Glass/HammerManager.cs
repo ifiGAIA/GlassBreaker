@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using UnityEngine.SceneManagement;
 
 public class HammerManager : MonoBehaviour
 {
@@ -35,5 +36,13 @@ public class HammerManager : MonoBehaviour
         {
             gameObject.tag = "Right_foot";
         }
+        else if(other.gameObject.name == "PlayArea" && gameObject.name == "boots_Left")
+        {
+            Invoke("ToGame",2f);
+        }
+    }
+    void ToGame()
+    {
+        SceneManager.LoadScene("TestScenes");
     }    
 }

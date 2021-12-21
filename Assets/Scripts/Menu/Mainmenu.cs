@@ -18,7 +18,7 @@ public class Mainmenu : MonoBehaviour
     void Start()
     {
         gotoGame1 = GameObject.Find("Table").GetComponent<GotoGame1>();
-        signtext = gameObject.transform.GetChild(0).GetChild(1).GetComponent<Text>();
+        signtext = gameObject.transform.GetChild(0).GetChild(2).GetComponent<Text>();
         Choosecanvas.SetActive(false);
         Signcanvas.SetActive(false);
     }
@@ -39,7 +39,7 @@ public class Mainmenu : MonoBehaviour
             Chooseglass[3].SetActive(true);
             Leftfoot.SetActive(true);
             Rightfoot.SetActive(true);
-            signtext.text = "敲擊桌面按鈕選擇右方練習玻璃\n\n每次練習有3面玻璃\n\n敲擊5個敲擊點即可擊破玻璃\n\n!!!請注意槌子以及鐵靴的顏色!!!";
+            signtext.text = "請注意槌子以及鐵靴的顏色";
         }
         else
         {
@@ -49,7 +49,7 @@ public class Mainmenu : MonoBehaviour
             Chooseglass[3].SetActive(false);
             Leftfoot.SetActive(false);
             Rightfoot.SetActive(false);
-            signtext.text = "敲擊桌面按鈕選擇右方練習玻璃\n\n每次練習有3面玻璃\n\n敲擊5個敲擊點即可擊破玻璃\n\n!!!請注意槌子的顏色!!!";
+            signtext.text = "請注意槌子的顏色";
         }
     }
 

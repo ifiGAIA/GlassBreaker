@@ -37,6 +37,10 @@ public class GotoGame1 : MonoBehaviour
     public GameObject Prefab;
     public bool glassisbroken;
     public bool canKnockglass;
+
+    //ToGame
+    public GameObject[] AllObjects;
+    public GameObject PlayArea;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +55,7 @@ public class GotoGame1 : MonoBehaviour
             GameManager.Instance.Foot = true;
         }
         // Teleport.SetActive(false);
+        PlayArea.SetActive(false);
         Signcanvas2.SetActive(false);
     }
 
@@ -72,7 +77,7 @@ public class GotoGame1 : MonoBehaviour
         practicecount += 1;
         if(practicecount == 2)
         {
-            Teleport.SetActive(true);
+            // Teleport.SetActive(true);
             Signcanvas2.SetActive(true);
             // Invoke("Fade", 15f);
         }
@@ -101,6 +106,16 @@ public class GotoGame1 : MonoBehaviour
         Destroy(hammer_Right);
         Destroy(Phone);
         Destroy(Handler);
+        PlayArea.SetActive(true);
+        Invoke("GotoGame",5f);
+        for(int i=0; i<=AllObjects.Length; i++)
+        {
+            AllObjects[i].SetActive(false);
+        }
+        // SceneManager.LoadScene("TestScenes");
+    }
+    void GotoGame()
+    {
         SceneManager.LoadScene("TestScenes");
     }
     public void ChooseGlass_RR()
