@@ -87,10 +87,6 @@ public class GlassShatter : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    void ToGame()
-    {
-        gameStart = true;
-    }
     void GlasscanKnock()
     {
         if(gameObject.transform.position == glassPos.transform.position)

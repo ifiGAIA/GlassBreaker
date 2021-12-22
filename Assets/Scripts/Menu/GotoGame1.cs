@@ -20,6 +20,7 @@ public class GotoGame1 : MonoBehaviour
     public GameObject Handler;
     public GameObject Teleport;
     public GameObject[] Dumbbellset;
+    public GameObject transparentWall;
 
     public GameObject Signcanvas2;
     private float i;
@@ -53,6 +54,7 @@ public class GotoGame1 : MonoBehaviour
             GameManager.Instance.Foot = true;
         }
         Signcanvas2.SetActive(false);
+        transparentWall.SetActive(true);
     }
 
     // Update is called once per frame
@@ -67,6 +69,14 @@ public class GotoGame1 : MonoBehaviour
                 Glassinstantiate();
             }
         }
+        if(practicecount == 2)
+        {
+            Invoke("CanExplore",2f);
+        }
+    }
+    void CanExplore()
+    {
+        transparentWall.SetActive(false);
     }
     void PracticeisDone()
     {

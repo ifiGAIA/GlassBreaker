@@ -39,7 +39,7 @@ public class Mainmenu : MonoBehaviour
             Chooseglass[3].SetActive(true);
             Leftfoot.SetActive(true);
             Rightfoot.SetActive(true);
-            signtext.text = "請注意槌子以及鐵靴的顏色";
+            signtext.text = "4. 請注意槌子以及鐵靴的顏色";
         }
         else
         {
@@ -49,7 +49,7 @@ public class Mainmenu : MonoBehaviour
             Chooseglass[3].SetActive(false);
             Leftfoot.SetActive(false);
             Rightfoot.SetActive(false);
-            signtext.text = "請注意槌子的顏色";
+            signtext.text = "4. 請注意槌子的顏色";
         }
     }
 
