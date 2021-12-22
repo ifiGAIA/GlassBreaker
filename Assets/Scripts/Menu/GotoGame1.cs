@@ -19,6 +19,7 @@ public class GotoGame1 : MonoBehaviour
     public GameObject Phone;
     public GameObject Handler;
     public GameObject Teleport;
+    public GameObject[] Dumbbellset;
 
     public GameObject Signcanvas2;
     private float i;
@@ -38,9 +39,6 @@ public class GotoGame1 : MonoBehaviour
     public bool glassisbroken;
     public bool canKnockglass;
 
-    //ToGame
-    public GameObject[] AllObjects;
-    public GameObject PlayArea;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +52,6 @@ public class GotoGame1 : MonoBehaviour
         {
             GameManager.Instance.Foot = true;
         }
-        // Teleport.SetActive(false);
-        PlayArea.SetActive(false);
         Signcanvas2.SetActive(false);
     }
 
@@ -77,46 +73,27 @@ public class GotoGame1 : MonoBehaviour
         practicecount += 1;
         if(practicecount == 2)
         {
-            // Teleport.SetActive(true);
             Signcanvas2.SetActive(true);
-            // Invoke("Fade", 15f);
         }
-    }
-    void Fade()
-    {
-        i -= fadspeed*Time.deltaTime;
-        if(i<=0)
-        {
-            i=0;
-        }
-        Signcanvas2.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, i);
-        Signcanvas2.transform.GetChild(1).GetComponent<Text>().color = new Color(1, 1, 1, i);
     }
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Grabbable")
         {
-            // Invoke("ToGame",2f);
-            ToGame();
+            GotoStandby();
         }
     }
-    void ToGame()
+    void GotoStandby()
     {
+        SceneManager.LoadScene("StandbyScenes");
         Destroy(hammer_Left);
         Destroy(hammer_Right);
         Destroy(Phone);
         Destroy(Handler);
-        PlayArea.SetActive(true);
-        Invoke("GotoGame",5f);
-        for(int i=0; i<=AllObjects.Length; i++)
+        for(int i=0; i<=Dumbbellset.Length; i++)
         {
-            AllObjects[i].SetActive(false);
+            Destroy(Dumbbellset[i]);
         }
-        // SceneManager.LoadScene("TestScenes");
-    }
-    void GotoGame()
-    {
-        SceneManager.LoadScene("TestScenes");
     }
     public void ChooseGlass_RR()
     {
