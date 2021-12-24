@@ -8,9 +8,12 @@ public class Bonus : MonoBehaviour
     public Transform[] InitPos;
     public GameObject Prefab;
     private GameObject glass;
+    public GameObject B_CanKnock;
+    public GameObject CanKnock;
     public int glasscount;
     public int brokenglass;
     public bool bonusTime;
+    public bool bonusstart;
     public AudioClip bonusSound;
     AudioSource audioSource;
     // Start is called before the first frame update
@@ -18,6 +21,8 @@ public class Bonus : MonoBehaviour
     {
         glassMove = glassMove.GetComponent<GlassMove>();
         audioSource = GetComponent<AudioSource>();
+        B_CanKnock.SetActive(false);
+        CanKnock.SetActive(true);
     }
 
     // Update is called once per frame
@@ -27,11 +32,13 @@ public class Bonus : MonoBehaviour
         {
             bonusTime = true;
         }
-        if(bonusTime)
+        if(bonusTime && !bonusstart)
         {
             Glassinstantiate();
             audioSource.PlayOneShot(bonusSound);
-            bonusTime = false;
+            bonusstart = true;
+            B_CanKnock.SetActive(true);
+            CanKnock.SetActive(false);
         }
     }
     public void GlassCount()

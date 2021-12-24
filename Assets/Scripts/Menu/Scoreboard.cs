@@ -117,7 +117,7 @@ public class Scoreboard : MonoBehaviour
     {
         GetComponent<Text>().text = "";
         timecounting.GetComponent<Text>().fontSize = 150;
-        timecounting.GetComponent<Text>().text = "B O N U S !!!";
+        timecounting.GetComponent<Text>().text = "B O N U S";
     }
     void GameOver()
     {

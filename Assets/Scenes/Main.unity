@@ -3191,7 +3191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e0d2be3fc7b3044b32a9fea4996cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDegreeOfDifficulty: 0
+  gameDegreeOfDifficulty: 1
   Foot: 0
 --- !u!4 &331983444
 Transform:
@@ -9352,7 +9352,7 @@ GameObject:
   - component: {fileID: 1565843020}
   m_Layer: 0
   m_Name: CanKnock
-  m_TagString: Untagged
+  m_TagString: CanKnock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

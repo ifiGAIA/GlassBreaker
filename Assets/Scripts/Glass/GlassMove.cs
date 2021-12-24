@@ -236,7 +236,7 @@ public class GlassMove : MonoBehaviour
             }
             else if(gameLevel == GameLevel.Game4)
             {
-                gameLevel = GameLevel.Bonus;
+                gameLevel = GameLevel.GameOver;
             }
         }
         // if(gameLevel == GameLevel.Game1)

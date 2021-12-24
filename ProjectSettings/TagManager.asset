@@ -18,6 +18,7 @@ TagManager:
   - yellow
   - Left_foot
   - Right_foot
+  - CanKnock
   layers:
   - Default
   - TransparentFX
