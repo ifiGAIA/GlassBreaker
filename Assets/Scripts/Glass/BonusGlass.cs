@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BonusGlass : MonoBehaviour
 {
+    Bonus bonus;
     MeshRenderer meshRenderer;
     BoxCollider boxCollider;
     public AudioClip glassbroken;
@@ -19,6 +20,7 @@ public class BonusGlass : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
         audioSource = GetComponent<AudioSource>();
         explosionGlass.SetActive(false);
+        bonus = GameObject.Find("Bonus").GetComponent<Bonus>();
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class BonusGlass : MonoBehaviour
             audioSource.PlayOneShot(glassbroken);
             meshRenderer.enabled = false;
             boxCollider.enabled = false;
+            bonus.GlassCount();
             explosionGlass.SetActive(true);
             glassisbroken = false;
             Invoke("DestroyGlass",2f);
@@ -57,6 +60,6 @@ public class BonusGlass : MonoBehaviour
     }
     void GlassMove()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
+        transform.Translate(Vector3.forward * -speed * Time.deltaTime, Space.World);
     }
 }

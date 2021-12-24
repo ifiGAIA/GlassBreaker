@@ -8,13 +8,9 @@ public enum GameLevel
     Game2,//紅綠
     Game3,//紅綠腳
     Game4,//紅腳
+    Bonus,
     GameOver
 }
-// public enum GameDegreeOfDifficulty
-// {
-//     Simple,
-//     Difficulty
-// }
 public class GlassMove : MonoBehaviour
 {
     GlassInstantiate glassInstantiate;
@@ -23,7 +19,6 @@ public class GlassMove : MonoBehaviour
     public GameLevel gameLevel;
     // public GameDegreeOfDifficulty gameDegreeOfDifficulty;
     public bool moveistrue = false;
-    private float PosZ;
     private Vector3 finalPos;
     public bool glassisbroken = false; 
     public float speed = 5f;
@@ -38,10 +33,7 @@ public class GlassMove : MonoBehaviour
     AudioSource audioSource;
     private bool glassaudio;
 
-    public GameObject Lefthand_game1;
-    public GameObject Lefthand_game2;
-    public GameObject Righthand_game1;
-    public GameObject Righthand_game2;
+    public GameObject Lefthand;
     public GameObject Righthand;
 
     public GameObject Leftfoot;
@@ -98,18 +90,15 @@ public class GlassMove : MonoBehaviour
 
         if(gameLevel == GameLevel.Game1 || gameLevel == GameLevel.Game3)
         {
-            // Lefthand_game1.SetActive(true);
-            // Righthand_game1.SetActive(true);
-            // Lefthand_game2.SetActive(false);
-            // Righthand_game2.SetActive(false);
             Righthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.red;
+        }
+        else if(gameLevel == GameLevel.Bonus)
+        {
+            Lefthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().enabled = false;
+            Righthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().enabled = false;
         }
         else
         {
-            // Lefthand_game1.SetActive(false);
-            // Righthand_game1.SetActive(false);
-            // Lefthand_game2.SetActive(true);
-            // Righthand_game2.SetActive(true);
             Righthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.green;
         }
     }
@@ -233,7 +222,7 @@ public class GlassMove : MonoBehaviour
             }
             else if(gameLevel == GameLevel.Game2)
             {
-                gameLevel = GameLevel.GameOver;
+                gameLevel = GameLevel.Bonus;//加Bonus
             }
         }
         else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
@@ -247,7 +236,7 @@ public class GlassMove : MonoBehaviour
             }
             else if(gameLevel == GameLevel.Game4)
             {
-                gameLevel = GameLevel.GameOver;
+                gameLevel = GameLevel.Bonus;
             }
         }
         // if(gameLevel == GameLevel.Game1)

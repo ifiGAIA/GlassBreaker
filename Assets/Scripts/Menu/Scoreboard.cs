@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Scoreboard : MonoBehaviour
 {
     public GlassMove glassMove;
+    public Bonus bonus;
     public GameObject timecounting;
     public int numberofbrokenglass1;
     public int numberofbrokenglass2;
@@ -20,6 +21,7 @@ public class Scoreboard : MonoBehaviour
     void Start()
     {
         glassMove = glassMove.GetComponent<GlassMove>();
+        bonus = bonus.GetComponent<Bonus>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -41,6 +43,10 @@ public class Scoreboard : MonoBehaviour
         else if(glassMove.gameLevel == GameLevel.Game4)
         {
             Scoring_Game4();
+        }
+        else if(glassMove.gameLevel == GameLevel.Bonus)
+        {
+            BonusTime();
         }
         else if(glassMove.gameLevel == GameLevel.GameOver)
         {
@@ -107,11 +113,17 @@ public class Scoreboard : MonoBehaviour
         }
         numberofbrokenglass2 = glasscount;
     }
+    void BonusTime()
+    {
+        GetComponent<Text>().text = "";
+        timecounting.GetComponent<Text>().fontSize = 150;
+        timecounting.GetComponent<Text>().text = "B O N U S !!!";
+    }
     void GameOver()
     {
         if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
-            finalscore = time1 + time2;
+            finalscore = time1 + time2 - bonus.brokenglass;
             GetComponent<Text>().fontSize = 100;
             GetComponent<Text>().text = "擊碎玻璃總數 : " + (numberofbrokenglass1+numberofbrokenglass2);
             timecounting.GetComponent<Text>().fontSize = 150;
@@ -124,7 +136,7 @@ public class Scoreboard : MonoBehaviour
         }
         else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
         {
-            finalscore = time1 + time2;
+            finalscore = time1 + time2 - bonus.brokenglass;
             GetComponent<Text>().fontSize = 100;
             GetComponent<Text>().text = "擊碎玻璃總數 : " + (numberofbrokenglass1+numberofbrokenglass2);
             timecounting.GetComponent<Text>().fontSize = 150;
