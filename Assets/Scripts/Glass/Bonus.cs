@@ -53,7 +53,7 @@ public class Bonus : MonoBehaviour
             for(int i=0; i<glasscount; i++)
             {
                 int Random_Pos = Random.Range(0, 2);
-                Vector3 glassPos = new Vector3(InitPos[Random_Pos].position.x, InitPos[Random_Pos].position.y, InitPos[Random_Pos].position.z+(float)i*2);
+                Vector3 glassPos = new Vector3(InitPos[Random_Pos].position.x, InitPos[Random_Pos].position.y, InitPos[Random_Pos].position.z+(float)i*3);
                 glass = Instantiate(Prefab, glassPos,InitPos[Random_Pos].rotation);//生成
                 glass.transform.parent = gameObject.transform;//生成物parent=富物件
                 glass.name = "glass" + (i+1).ToString();

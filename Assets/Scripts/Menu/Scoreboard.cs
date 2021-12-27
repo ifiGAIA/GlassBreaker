@@ -17,6 +17,7 @@ public class Scoreboard : MonoBehaviour
     public AudioClip gameover;
     AudioSource audioSource;
     private bool gameOver;
+    float fonti;
     // Start is called before the first frame update
     void Start()
     {
@@ -116,8 +117,18 @@ public class Scoreboard : MonoBehaviour
     void BonusTime()
     {
         GetComponent<Text>().text = "";
-        timecounting.GetComponent<Text>().fontSize = 150;
+        fonti += Time.deltaTime*200f;
+        if(fonti > 150f)
+        {
+            fonti = 150f;
+        }
+        timecounting.GetComponent<Text>().fontSize = (int)fonti;
         timecounting.GetComponent<Text>().text = "B O N U S";
+        Invoke("Scoresettlement",12f);
+    }
+    void Scoresettlement()
+    {
+        glassMove.gameLevel = GameLevel.GameOver;
     }
     void GameOver()
     {
