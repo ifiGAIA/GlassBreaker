@@ -60,6 +60,6 @@ public class BonusGlass : MonoBehaviour
     }
     void GlassMove()
     {
-        transform.Translate(Vector3.forward * -speed * Time.deltaTime, Space.World);
+        transform.Translate(Vector3.forward * -bonus.Speed_S.speed * Time.deltaTime, Space.World);
     }
 }

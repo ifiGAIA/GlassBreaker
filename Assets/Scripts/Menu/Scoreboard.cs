@@ -124,11 +124,13 @@ public class Scoreboard : MonoBehaviour
         }
         timecounting.GetComponent<Text>().fontSize = (int)fonti;
         timecounting.GetComponent<Text>().text = "B O N U S";
-        Invoke("Scoresettlement",12f);
-    }
-    void Scoresettlement()
-    {
-        glassMove.gameLevel = GameLevel.GameOver;
+        if(bonus.bonusTime == true)
+        {
+            if(bonus.GlassManager.transform.childCount == 0)
+            {
+                glassMove.gameLevel = GameLevel.GameOver;
+            }
+        }
     }
     void GameOver()
     {
