@@ -10,7 +10,7 @@ public class ReadyToGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("GotoGame",5f);
+        Invoke("GotoGame",8f);
     }
 
     // Update is called once per frame

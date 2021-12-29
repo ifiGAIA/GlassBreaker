@@ -21,7 +21,6 @@ public class Host : MonoBehaviour
     void Update()
     {
         Middle();
-        Reload();
     }
     void GameStart()
     {
@@ -46,7 +45,7 @@ public class Host : MonoBehaviour
             }
         }
     }
-    void Reload()
+    public void Reload()
     {
         if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {

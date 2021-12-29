@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameStartButton : MonoBehaviour
 {
+    GlassMove glassMove;
     Image image;
     Color imagecolor;
     public AudioClip knock;
@@ -17,6 +18,7 @@ public class GameStartButton : MonoBehaviour
     float time_int = 4;
     public Text time_UI;
     public bool countdown;
+    public Text stage;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class GameStartButton : MonoBehaviour
         imagecolor = image.color;
         audioSource = GetComponent<AudioSource>();
         timecounting = GameObject.Find("Time").GetComponent<Timecounting>();
+        glassMove = GameObject.Find("Glass").GetComponent<GlassMove>();
     }
 
     // Update is called once per frame
@@ -33,10 +36,19 @@ public class GameStartButton : MonoBehaviour
         if(countdown)
         {
             timer();
+            stage.text = " ";
         }
         if(!countdown)
         {
             time_UI.text = " ";
+            if(glassMove.gameLevel == GameLevel.Game1 || glassMove.gameLevel == GameLevel.Game3)
+            {
+                stage.text = "第一階段";
+            }
+            else if(glassMove.gameLevel == GameLevel.Game2 || glassMove.gameLevel == GameLevel.Game4)
+            {
+                stage.text = "第二階段";
+            }
         }
         if(Input.GetKeyDown(KeyCode.W))
         {

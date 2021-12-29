@@ -94,8 +94,10 @@ public class GlassMove : MonoBehaviour
         }
         else if(gameLevel == GameLevel.Bonus)
         {
-            Lefthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().enabled = false;
-            Righthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().enabled = false;
+            Lefthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.white;
+            Righthand.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.white;
+            Leftfoot.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.white;
+            Rightfoot.transform.GetChild(0).GetChild(0).GetComponent<Light>().color = Color.white;
         }
         else
         {

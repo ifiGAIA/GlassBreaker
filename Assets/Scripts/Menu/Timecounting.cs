@@ -13,9 +13,11 @@ public class Timecounting : MonoBehaviour
     public float timer_F;
     private int timer_I = 10;
     public AudioSource audioSource;
+    public Host host;
     // Start is called before the first frame update
     void Start()
     {
+        host = host.GetComponent<Host>();
         if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Simple)
         {
             timer_F = 60;
@@ -40,10 +42,6 @@ public class Timecounting : MonoBehaviour
             timer_f -= Time.deltaTime;
             timer_i = (int)timer_f;
             Second();
-        }
-        if(second == 0)
-        {
-            // ReTime();
         }
         if(Input.GetKeyDown(KeyCode.A))
         {
@@ -85,6 +83,7 @@ public class Timecounting : MonoBehaviour
         {
             GetComponent<Text>().text = "秒數 : 80";
         }
+        host.Reload();
     }
     
     void turn_time() 

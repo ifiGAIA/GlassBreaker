@@ -44,7 +44,7 @@ public class Slotmachine : MonoBehaviour
     {
         if(gameObject.name == "Speed")
         {
-            speed = Random.Range(1, 6);
+            speed = Random.Range(3, 8);
             speedText.text = speed.ToString();
         }
     }
