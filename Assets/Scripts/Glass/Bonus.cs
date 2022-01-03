@@ -61,15 +61,16 @@ public class Bonus : MonoBehaviour
             B_CanKnock.SetActive(true);
             CanKnock.SetActive(false);
         }
-        if(Glasscount_S.countresult == true && Speed_S.speedresult == true && !bonusready)
+        if(Glasscount_S.countresult == true && Speed_S.speedresult == true)
         {
             // bonusTime = true;
-            countdown = true;
-            audioSource.PlayOneShot(Ready);
-            SlotMachine.transform.GetChild(0).gameObject.SetActive(false);
-            SlotMachine.transform.GetChild(1).gameObject.SetActive(false);
-            SlotMachine.transform.GetChild(2).gameObject.SetActive(true);
-            bonusready = true;
+            // countdown = true;
+            // audioSource.PlayOneShot(Ready);
+            // SlotMachine.transform.GetChild(0).gameObject.SetActive(false);
+            // SlotMachine.transform.GetChild(1).gameObject.SetActive(false);
+            // SlotMachine.transform.GetChild(2).gameObject.SetActive(true);
+            // bonusready = true;
+            Invoke("BonusStandby",1f);
         }
 
         if(countdown)
@@ -90,6 +91,18 @@ public class Bonus : MonoBehaviour
         {
             time_UI.text = "GO!";
             Invoke("BonusStart",2f);
+        }
+    }
+    void BonusStandby()
+    {
+        if(!bonusready)
+        {
+            countdown = true;
+            audioSource.PlayOneShot(Ready);
+            SlotMachine.transform.GetChild(0).gameObject.SetActive(false);
+            SlotMachine.transform.GetChild(1).gameObject.SetActive(false);
+            SlotMachine.transform.GetChild(2).gameObject.SetActive(true);
+            bonusready = true;
         }
     }
     void BonusStart()

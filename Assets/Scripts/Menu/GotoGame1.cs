@@ -33,6 +33,7 @@ public class GotoGame1 : MonoBehaviour
     public int glasscount;
     public bool glassreload;
     public int practicecount;
+    public bool Signcanvas2cansee;
 
     //生成玻璃
     public Transform InitPos;
@@ -67,6 +68,7 @@ public class GotoGame1 : MonoBehaviour
             if(glassisbroken)
             {
                 Glassinstantiate();
+                Signcanvas2.SetActive(false);
             }
         }
         if(practicecount == 2)
@@ -83,6 +85,7 @@ public class GotoGame1 : MonoBehaviour
         practicecount += 1;
         if(practicecount == 2)
         {
+            Signcanvas2cansee = true;
             Signcanvas2.SetActive(true);
         }
     }
@@ -164,6 +167,10 @@ public class GotoGame1 : MonoBehaviour
             canKnockglass = false;
             PracticeisDone();
             glasscount = 0;
+            if(Signcanvas2cansee)
+            {
+                Signcanvas2.SetActive(true);
+            }
         }
     }
     void Glassinstantiate()

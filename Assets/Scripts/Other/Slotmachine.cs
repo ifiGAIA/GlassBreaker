@@ -12,12 +12,15 @@ public class Slotmachine : MonoBehaviour
     Text speedText;
     public bool countresult;
     public bool speedresult;
+    public AudioClip knock;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         glasscountText = gameObject.transform.GetChild(1).GetComponent<Text>();
         speedText = gameObject.transform.GetChild(1).GetComponent<Text>();
         boxCollider = GetComponent<BoxCollider>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -54,11 +57,13 @@ public class Slotmachine : MonoBehaviour
         {
             countresult = true;
             boxCollider.enabled = false;
+            audioSource.PlayOneShot(knock);
         }
         else if(other.gameObject.tag == "Left_hammer" && gameObject.name == "Speed" || other.gameObject.tag == "Right_hammer" && gameObject.name == "Speed")
         {
             speedresult = true;
             boxCollider.enabled = false;
+            audioSource.PlayOneShot(knock);
         }
     }
 }
