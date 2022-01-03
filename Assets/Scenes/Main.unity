@@ -1124,6 +1124,7 @@ MonoBehaviour:
   glasscount: 0
   glassreload: 0
   practicecount: 0
+  Signcanvas2cansee: 0
   InitPos: {fileID: 892463616}
   Prefab: {fileID: 8647510520687804986, guid: 4e83141da0b54904087e8a2915fc61be, type: 3}
   glassisbroken: 0
@@ -3191,7 +3192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e0d2be3fc7b3044b32a9fea4996cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDegreeOfDifficulty: 0
+  gameDegreeOfDifficulty: 1
   Foot: 0
 --- !u!4 &331983444
 Transform:
