@@ -62,13 +62,17 @@ public class Scoreboard : MonoBehaviour
     {
         time1 = 60 - timecounting.GetComponent<Timecounting>().second;
         // score1 = glasscount * 10;
-        if (glasscount < 10)
+        if (glasscount < 10 && glasscount > 0)
         {
-            GetComponent<Text>().text = "擊碎玻璃數 : 0" + glasscount;
+            GetComponent<Text>().text = "剩餘玻璃數 : 0" + (10 - glasscount);
+        }
+        else if(glasscount == 0)
+        {
+            GetComponent<Text>().text = "剩餘玻璃數 : " + (10 - glasscount);
         }
         else if(glasscount == 10)
         {
-            GetComponent<Text>().text = "擊碎玻璃數 : " + glasscount;
+            GetComponent<Text>().text = "剩餘玻璃數 : 0" + (10 - glasscount);
         }
         numberofbrokenglass1 = glasscount;
     }
@@ -76,13 +80,17 @@ public class Scoreboard : MonoBehaviour
     {
         time2 = 60 - timecounting.GetComponent<Timecounting>().second;
         // score2 = glasscount * 10;
-        if (glasscount < 10)
+        if (glasscount < 10 && glasscount > 0)
         {
-            GetComponent<Text>().text = "擊碎玻璃數 : 0" + glasscount;
+            GetComponent<Text>().text = "剩餘玻璃數 : 0" + (10 - glasscount);
+        }
+        else if(glasscount == 0)
+        {
+            GetComponent<Text>().text = "剩餘玻璃數 : " + (10 - glasscount);
         }
         else if(glasscount == 10)
         {
-            GetComponent<Text>().text = "擊碎玻璃數 : " + glasscount;
+            GetComponent<Text>().text = "剩餘玻璃數 : 0" + (10 - glasscount);
         }
         numberofbrokenglass2 = glasscount;
     }
@@ -90,13 +98,17 @@ public class Scoreboard : MonoBehaviour
     {
         time1 = 80 - timecounting.GetComponent<Timecounting>().second;
         // score1 = glasscount * 10;
-        if (glasscount < 10)
+        if (glasscount < 10 && glasscount > 0)
         {
-            GetComponent<Text>().text = "擊碎玻璃數 : 0" + glasscount;
+            GetComponent<Text>().text = "剩餘玻璃數 : 0" + (10 - glasscount);
+        }
+        else if(glasscount == 0)
+        {
+            GetComponent<Text>().text = "剩餘玻璃數 : " + (10 - glasscount);
         }
         else if(glasscount == 10)
         {
-            GetComponent<Text>().text = "擊碎玻璃數 : " + glasscount;
+            GetComponent<Text>().text = "剩餘玻璃數 : 0" + (10 - glasscount);
         }
         numberofbrokenglass1 = glasscount;
     }
@@ -104,13 +116,17 @@ public class Scoreboard : MonoBehaviour
     {
         time2 = 80 - timecounting.GetComponent<Timecounting>().second;
         // score2 = glasscount * 10;
-        if (glasscount < 10)
+        if (glasscount < 10 && glasscount > 0)
         {
-            GetComponent<Text>().text = "擊碎玻璃數 : 0" + glasscount;
+            GetComponent<Text>().text = "剩餘玻璃數 : 0" + (10 - glasscount);
+        }
+        else if(glasscount == 0)
+        {
+            GetComponent<Text>().text = "剩餘玻璃數 : " + (10 - glasscount);
         }
         else if(glasscount == 10)
         {
-            GetComponent<Text>().text = "擊碎玻璃數 : " + glasscount;
+            GetComponent<Text>().text = "剩餘玻璃數 : 0" + (10 - glasscount);
         }
         numberofbrokenglass2 = glasscount;
     }

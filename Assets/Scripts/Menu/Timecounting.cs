@@ -63,11 +63,13 @@ public class Timecounting : MonoBehaviour
         else if(second >=10)
         {
             GetComponent<Text>().text = "秒數 : " + second;
+            audioSource.volume = 0.2f;
         }
         else
         {
             GetComponent<Text>().text = "秒數 : 60";
             audioSource.Stop();
+            audioSource.volume = 0.2f;
         }
     }
     public void ReTime()

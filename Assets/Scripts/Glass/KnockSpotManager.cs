@@ -24,7 +24,7 @@ public class KnockSpotManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(start)
+        if(start && Knock.childCount != 0)
         {
             for(int i=1; i<=4;i++)
             {
@@ -37,7 +37,10 @@ public class KnockSpotManager : MonoBehaviour
             KnockSpot();
             knocking = false;
         }
-        SpotManager();
+        if(Knock.childCount != 0)
+        {
+            SpotManager();
+        }
     }
     void SpotManager()
     {
@@ -109,9 +112,18 @@ public class KnockSpotManager : MonoBehaviour
         spot3 = false;
         spot4 = false;
         spot5 = false;
-        for(int i=0; i<=5; i++)
+
+        if(Knock.childCount != 0)
         {
-            Destroy(Knock.GetChild(i).gameObject);
+            for(int i=0; i<=Knock.childCount; i++)
+            {
+                Destroy(Knock.GetChild(i).gameObject);
+            }
+            Debug.Log(Knock.childCount);
         }
+        // for(int i=0; i<=Knock.childCount; i++)
+        // {
+        //     Destroy(Knock.GetChild(i).gameObject);
+        // }
     }
 }

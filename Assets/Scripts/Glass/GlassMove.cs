@@ -225,6 +225,7 @@ public class GlassMove : MonoBehaviour
             else if(gameLevel == GameLevel.Game2)
             {
                 gameLevel = GameLevel.Bonus;//加Bonus
+                timecounting.ReTime();
             }
         }
         else if(GameManager.Instance.gameDegreeOfDifficulty == GameDegreeOfDifficulty.Difficulty)
