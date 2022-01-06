@@ -13,6 +13,7 @@ public class KnockSpotManager : MonoBehaviour
     public bool spot3;
     public bool spot4;
     public bool spot5;
+    public bool d_spots;
 
     // Start is called before the first frame update
     void Start()
@@ -101,10 +102,11 @@ public class KnockSpotManager : MonoBehaviour
             spot3 = false;
             spot4 = false;
             spot5 = false;
-            Invoke("Destroyspot",0.5f);
+            d_spots = true;
+            Invoke("Reloadspot",0.5f);
         }
     }
-    public void Destroyspot()
+    public void Reloadspot()
     {
         start = true;
         spot1 = true;
@@ -113,17 +115,9 @@ public class KnockSpotManager : MonoBehaviour
         spot4 = false;
         spot5 = false;
 
-        if(Knock.childCount != 0)
+        for(int i=0; i<=Knock.childCount; i++)
         {
-            for(int i=0; i<=Knock.childCount; i++)
-            {
-                Destroy(Knock.GetChild(i).gameObject);
-            }
-            Debug.Log(Knock.childCount);
+            Destroy(Knock.GetChild(i).gameObject);
         }
-        // for(int i=0; i<=Knock.childCount; i++)
-        // {
-        //     Destroy(Knock.GetChild(i).gameObject);
-        // }
     }
 }

@@ -14,6 +14,7 @@ public class Bonus : MonoBehaviour
     public GameObject B_CanKnock;
     public GameObject CanKnock;
     public GameObject SlotMachine;
+    public GameObject Bonussign;
     public GameObject GlassManager;
     public int glasscount;
     public int brokenglass;
@@ -21,6 +22,7 @@ public class Bonus : MonoBehaviour
     public bool bonusstart;
     public bool bonuschoose;
     public bool bonusready;
+    private bool bonussign;
     public AudioClip bonusSound;
     public AudioClip Ready;
     AudioSource audioSource;
@@ -40,6 +42,7 @@ public class Bonus : MonoBehaviour
         SlotMachine.transform.GetChild(0).gameObject.SetActive(false);
         SlotMachine.transform.GetChild(1).gameObject.SetActive(false);
         SlotMachine.transform.GetChild(2).gameObject.SetActive(false);
+        Bonussign.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,14 +66,7 @@ public class Bonus : MonoBehaviour
         }
         if(Glasscount_S.countresult == true && Speed_S.speedresult == true)
         {
-            // bonusTime = true;
-            // countdown = true;
-            // audioSource.PlayOneShot(Ready);
-            // SlotMachine.transform.GetChild(0).gameObject.SetActive(false);
-            // SlotMachine.transform.GetChild(1).gameObject.SetActive(false);
-            // SlotMachine.transform.GetChild(2).gameObject.SetActive(true);
-            // bonusready = true;
-            Invoke("BonusStandby",1f);
+            Invoke("BonusSign",1f);
         }
 
         if(countdown)
@@ -93,14 +89,26 @@ public class Bonus : MonoBehaviour
             Invoke("BonusStart",2f);
         }
     }
+    void BonusSign()
+    {
+        if(!bonussign)
+        {
+            Bonussign.SetActive(true);
+            SlotMachine.transform.GetChild(0).gameObject.SetActive(false);
+            SlotMachine.transform.GetChild(1).gameObject.SetActive(false);
+            Invoke("BonusStandby",3f);
+            bonussign = true;
+        }
+    }
     void BonusStandby()
     {
         if(!bonusready)
         {
             countdown = true;
             audioSource.PlayOneShot(Ready);
-            SlotMachine.transform.GetChild(0).gameObject.SetActive(false);
-            SlotMachine.transform.GetChild(1).gameObject.SetActive(false);
+            // SlotMachine.transform.GetChild(0).gameObject.SetActive(false);
+            // SlotMachine.transform.GetChild(1).gameObject.SetActive(false);
+            Bonussign.SetActive(false);
             SlotMachine.transform.GetChild(2).gameObject.SetActive(true);
             bonusready = true;
         }

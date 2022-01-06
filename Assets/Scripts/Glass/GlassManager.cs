@@ -119,7 +119,7 @@ public class GlassManager : MonoBehaviour
             crack.SetActive(false);
             Invoke("DestroyGlass",5f);
             glassMove.Glassshatter();
-            KnockSpotscollect.GetComponent<KnockSpotManager>().Destroyspot();
+            KnockSpotscollect.GetComponent<KnockSpotManager>().Reloadspot();
         }
     }
 
