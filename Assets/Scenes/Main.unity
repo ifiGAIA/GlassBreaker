@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a118e13cd463c342a42a7a7b76239d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glassChoose: 1
+  glassChoose: 0
   hammer_Left: {fileID: 1930179558}
   hammer_Right: {fileID: 1060425954}
   Phone: {fileID: 7740455684311771350}
@@ -3192,7 +3192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e0d2be3fc7b3044b32a9fea4996cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDegreeOfDifficulty: 1
+  gameDegreeOfDifficulty: 0
   Foot: 0
 --- !u!4 &331983444
 Transform:
