@@ -75,6 +75,10 @@ public class GotoGame1 : MonoBehaviour
         {
             Invoke("CanExplore",2f);
         }
+        if(Input.GetKey(KeyCode.G))
+        {
+            SceneManager.LoadScene("StandbyScenes");
+        }
     }
     void CanExplore()
     {
