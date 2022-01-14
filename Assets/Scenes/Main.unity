@@ -3192,7 +3192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e0d2be3fc7b3044b32a9fea4996cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDegreeOfDifficulty: 1
+  gameDegreeOfDifficulty: 0
   Foot: 0
 --- !u!4 &331983444
 Transform:
@@ -17291,6 +17291,7 @@ GameObject:
   - component: {fileID: 91111031}
   - component: {fileID: 919132149110735654}
   - component: {fileID: 919132149110735655}
+  - component: {fileID: 919132149110735656}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -17307,7 +17308,7 @@ SphereCollider:
   m_GameObject: {fileID: 919132149110735653}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.05
   m_Center: {x: 1, y: -2.05, z: 1.03}
@@ -17327,6 +17328,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &919132149110735656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149110735653}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02463007, y: 0.5804086, z: 0.5329178}
+  m_Center: {x: 1, y: -2.05, z: 1.03}
 --- !u!33 &967134710795886927
 MeshFilter:
   m_ObjectHideFlags: 0
