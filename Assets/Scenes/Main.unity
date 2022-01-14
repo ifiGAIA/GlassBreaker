@@ -17289,7 +17289,6 @@ GameObject:
   - component: {fileID: 1711813855720284912}
   - component: {fileID: 91111030}
   - component: {fileID: 91111031}
-  - component: {fileID: 919132149110735654}
   - component: {fileID: 919132149110735655}
   - component: {fileID: 919132149110735656}
   m_Layer: 0
@@ -17299,19 +17298,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &919132149110735654
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149110735653}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.05
-  m_Center: {x: 1, y: -2.05, z: 1.03}
 --- !u!54 &919132149110735655
 Rigidbody:
   m_ObjectHideFlags: 0
