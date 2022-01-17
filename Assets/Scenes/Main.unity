@@ -1051,7 +1051,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "4. \u8ACB\u6CE8\u610F\u69CC\u5B50\u7684\u984F\u8272"
+  m_Text: "4. \u8ACB\u6CE8\u610F\u69CC\u5B50\u7684\u984F\u8272\u4E26\u5B8C\u6210\u5169\u7A2E\u6A21\u5F0F"
 --- !u!222 &64072581
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4794,7 +4794,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "1. \u6572\u64CA\u684C\u9762\u6309\u9215\u9078\u64C7\u53F3\u65B9\u7DF4\u7FD2\u73BB\u7483\n\n2.
-    \u6BCF\u6B21\u7DF4\u7FD2\u67093\u9762\u73BB\u7483\n\n3. \u6572\u64CA5\u500B\u6572\u64CA\u9EDE\u5373\u53EF\u64CA\u7834\u73BB\u7483"
+    \u5169\u7A2E\u7DF4\u7FD2\u5404\u67093\u9762\u73BB\u7483\n\n3. \u6572\u64CA5\u500B\u6572\u64CA\u9EDE\u5373\u53EF\u64CA\u7834\u73BB\u7483"
 --- !u!222 &622007955
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8215,7 +8215,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1130.8, y: 717.54}
+  m_SizeDelta: {x: 1370, y: 717.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331402975
 MonoBehaviour:
@@ -10158,7 +10158,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 565.3936, y: 358.77216}
-  m_SizeDelta: {x: 1130.787, y: 717.5444}
+  m_SizeDelta: {x: 1370, y: 717.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1803139276
 GameObject:
