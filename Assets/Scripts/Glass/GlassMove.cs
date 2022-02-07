@@ -241,6 +241,7 @@ public class GlassMove : MonoBehaviour
             {
                 // gameLevel = GameLevel.GameOver;
                 gameLevel = GameLevel.Bonus;
+                timecounting.ReTime();
             }
         }
         // if(gameLevel == GameLevel.Game1)
