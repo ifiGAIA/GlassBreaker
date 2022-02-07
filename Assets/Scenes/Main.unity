@@ -4793,7 +4793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1. \u6572\u64CA\u684C\u9762\u6309\u9215\u9078\u64C7\u53F3\u65B9\u7DF4\u7FD2\u73BB\u7483\n\n2.
+  m_Text: "1. \u6572\u64CA\u684C\u9762\u6309\u9215\u9078\u64C7\u53F3\u65B9\u7DF4\u7FD2\u73BB\u7483\u279C\n\n2.
     \u5169\u7A2E\u7DF4\u7FD2\u5404\u67093\u9762\u73BB\u7483\n\n3. \u6572\u64CA5\u500B\u6572\u64CA\u9EDE\u5373\u53EF\u64CA\u7834\u73BB\u7483"
 --- !u!222 &622007955
 CanvasRenderer:
