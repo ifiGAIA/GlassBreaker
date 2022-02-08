@@ -180,6 +180,10 @@ public class GlassMove : MonoBehaviour
                 timesUp = true;
                 glasscount = 0;
             }
+            else
+            {
+                timesUp = false;
+            }
             if(timecounting.gamestart == true)
             {
                 glassaudio = false;
