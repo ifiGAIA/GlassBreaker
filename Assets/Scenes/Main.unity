@@ -3192,7 +3192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e0d2be3fc7b3044b32a9fea4996cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDegreeOfDifficulty: 1
+  gameDegreeOfDifficulty: 0
   Foot: 0
 --- !u!4 &331983444
 Transform:
@@ -4793,7 +4793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1. \u6572\u64CA\u684C\u9762\u6309\u9215\u9078\u64C7\u7DF4\u7FD2\u73BB\u7483(\u5411\u53F3\u8F49)\n\n2.
+  m_Text: "1. \u6572\u64CA\u684C\u9762\u6309\u9215\u9078\u64C7\u7DF4\u7FD2\u73BB\u7483(\u73BB\u7483\u5728\u53F3\u624B\u65B9)\n\n2.
     \u5169\u7A2E\u7DF4\u7FD2\u5404\u67093\u9762\u73BB\u7483\n\n3. \u6572\u64CA5\u500B\u6572\u64CA\u9EDE\u5373\u53EF\u64CA\u7834\u73BB\u7483"
 --- !u!222 &622007955
 CanvasRenderer:
